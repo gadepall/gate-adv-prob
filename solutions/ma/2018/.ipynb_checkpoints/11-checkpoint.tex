@@ -1,0 +1,18 @@
+
+The total number of black balls are 5\\
+Number of black balls initially present + number of black balls added =5\\
+So, the number of black balls initially in the urn is 5-3=2\\
+Let X be the random variable denoting the number of black balls in the urn. So, by binomial distribution, 
+\begin{align}
+    \pr{X=1}&=p\\
+    \pr{X=k}&= {n\choose k} p^k (1-p)^{n-k}\\ \label{ma2018-11:eq}
+    k&=0,1,2,...,n
+\end{align}
+For the given problem, $n=4$ and $p=0.5$, because there is equal probability for each ball of being white or black.
+For having exactly 2 black balls, \\
+From \eqref{ma2018-11:eq},
+\begin{align}
+    \pr{X=2}&= {4 \choose 2} \left(\frac{1}{2}\right)^2\left(\frac{1}{2}\right)^2\\
+    &=\frac{6}{16}\\
+    &=\frac{3}{8}
+\end{align}

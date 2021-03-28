@@ -1,0 +1,29 @@
+We know,
+\begin{align}
+    \pr{A|B} = \frac{\pr{A\cap B}}{\pr{B}}
+\end{align}
+Also, for a Poisson Distribution:
+\begin{align}
+    \pr{N = x} = \frac{e^{-\lambda}\lambda^x}{x!}
+    \label{poisson}
+\end{align}
+where $\lambda$ is the parameter\\
+Let $N_2$ be the number of persons hospitalised.\\
+Let $N = a$, and $N_1 = i(i\leq a)$, then, $N_2 = a-i$\\
+Then, from \eqref{condition} and \eqref{poisson}:
+\begin{align}
+    \pr{N_2 = a-i} =\pr{N_1 = i}\\
+    =\pr{N_1 = i|N = a}\pr{N = a}\\
+     = \frac{1}{a}\frac{e^{-\lambda}\lambda^a}{a!}
+\end{align}
+Thus,
+\begin{align}
+    E(N_2) = \sum_{a = 0}^{\infty} \sum_{i = 0 }^{a} (a-i) \times \frac{1}{a}\frac{e^{-\lambda}\lambda^a}{a!}\\
+     = \sum_{a=0}^{\infty}\frac{e^{-\lambda}\lambda^a}{a!} \sum_{i = 0 }^{a} \frac{a-i}{a}\\
+    = \sum_{a=0}^{\infty}\frac{e^{-\lambda}\lambda^a}{a!} \brak{a - \frac{(a+1)}{2}}\\
+     = \sum_{a=0}^{\infty}\frac{e^{-\lambda}\lambda^a}{a!}\frac{a-1}{2}\\
+      = \frac{e^{-\lambda}}{2}\sbrak{\sum_{a=0}^{\infty}\frac{a\lambda^a}{a!} - \sum_{a=0}^{\infty}\frac{\lambda^a}{a!}}\\
+       = \frac{e^{-\lambda}}{2}\sbrak{\lambda\sum_{a=1}^{\infty} \frac{\lambda^{a-1}}{(a-1)!} - \sum_{a=0}^{\infty}\frac{\lambda^a}{a!}}\\
+        = \frac{e^{-\lambda}}{2}\sbrak{\lambda e^\lambda - e^\lambda}\\
+         = \frac{\lambda - 1}{2}
+\end{align}

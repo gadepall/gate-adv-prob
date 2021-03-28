@@ -1,0 +1,47 @@
+
+The PDF of $X$ and $Y$ is,
+\begin{align}
+    f_X(x)=\int\limits_{-\infty}^\infty f(x,y)d y
+\end{align}
+\begin{align}
+    f_X(x)=\int\limits_0^{1-x}2d y
+\end{align}
+\begin{align}
+    f_X(x)=2-2x
+\end{align}
+\begin{align}
+    f_Y(y)=\int\limits_{-\infty}^\infty f(x,y)d x
+\end{align}
+\begin{align}
+    f_Y(y)=\int\limits_0^{1-y}2d x
+\end{align}
+\begin{align}
+    f_Y(y)=2-2y
+\end{align}
+\begin{align}
+    f_Y\brak{\frac{1}{2}}=1
+\end{align}
+by using Bayes theorem,
+\begin{align}
+    f_{X \mid Y}\brak{x \bigm| \frac{1}{2}}=\frac{f_{X,Y}\brak{x,\frac{1}{2}}}{f_Y\brak{\frac{1}{2}}}
+\end{align}
+\begin{align}
+    f_{X\mid Y}\brak{x \bigm| \frac{1}{2}}=
+    \begin{cases}
+    2, & 0<x<\frac{1}{2},\\
+    0, & elsewhere.
+    \end{cases}
+\end{align}
+It is in the form of Bernoulli distribution, the expectation value is given by,
+\begin{align}
+    E\brak{X\bigm| Y=\frac{1}{2}}=\sum\limits_{-\infty}^{\infty}x f_{X\mid Y}\brak{x \bigm| \frac{1}{2}}
+\end{align}
+\begin{align}
+    E\brak{X\bigm| Y=\frac{1}{2}}=\int\limits_{-\infty}^0x(0)d x + \int\limits_0^\frac{1}{2}x(2)d x + \int\limits^{-\infty}_0x(0)d x
+\end{align}
+\begin{align}
+    E\brak{X\bigm| Y=\frac{1}{2}}=\int\limits_0^\frac{1}{2}2x d x
+\end{align}
+\begin{align}
+    E\brak{X\bigm| Y=\frac{1}{2}}=\frac{1}{4}
+\end{align}

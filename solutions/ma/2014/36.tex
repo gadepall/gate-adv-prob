@@ -1,0 +1,60 @@
+
+This problem involves Bayes theorem and \newline Exponential distribution
+\bigskip
+\begin{itemize}
+    \item Probability that bulb is from Plant A =\newline $\pr{A}$ = \(\frac{1}{5}\)
+    \item Probability that bulb is from Plant B =\newline$\pr{B}$ = \( \frac{4}{5} \)
+\end{itemize}
+\bigskip
+One can use exponential distribution to find out the probability that the bulbs work after 12 months\\
+Let X be a variable representing the lifetime of a bulb in months.\\
+So X has a Cumulative distribution Function:
+\begin{equation}
+    F_X(x,\lambda) =
+    \begin{cases}
+        1 - {e}^{-\displaystyle\lambda x} & if \hspace{0.3cm}x \geq 0 \\
+        0                                 & if \hspace{0.3cm}x < 0
+    \end{cases}
+\end{equation}
+\begin{table}[!ht]
+    \begin{center}
+        \resizebox{\columnwidth}{!}
+        {
+            \begin{tabular}{|c|c|}
+                \hline
+                $\frac{1}{\displaystyle\lambda}$ &  Mean of distribution\\
+                \hline
+                x & Time to failure (in months)\\
+                \hline
+                $\lambda_A$ & $\frac{1}{6}$\\
+                \hline
+                $\lambda_B$ & $\frac{1}{2}$\\
+                \hline
+                $\pr{X\leq k}$ & $F_X(X,\lambda)$\\
+                \hline
+            \end{tabular}
+        }
+    \end{center}
+\end{table}
+Let us denote that the bulbs works after 12 months with the variable W.
+\begin{align}
+\text{$\pr{W \mid A}$} = & 1 -\notag \text{Pr(Fails within 12 months $\mid$ A)}\\
+    = & 1 - F_X(12,\lambda_A)                       \\
+    = & {e}^{\displaystyle - \lambda_A \times 12} 
+\end{align}
+\begin{align}
+    \text{$\pr{W \mid B}$} = & 1 -\notag \text{Pr(Fails within 12 months $\mid$ B)}\\
+        = & 1 - F_X(12,\lambda_B)                       \\
+        = & {e}^{\displaystyle - \lambda_B \times 12} 
+\end{align}
+From Bayes theorem,\\
+\begin{align}
+    \pr{A \mid W} = & \displaystyle{\frac{Pr(A) \times Pr(W \mid A)}{Pr(A) \times Pr(W \mid A) + Pr(B) \times Pr(W \mid B)}}\\
+    = & \displaystyle{\frac{Pr(A) \times {e}^{\displaystyle - \lambda_A \times 12}}{Pr(A) \times {e}^{\displaystyle - \lambda_A \times 12} + Pr(B) \times {e}^{\displaystyle - \lambda_B \times 12} }}
+\end{align}
+Substituting the known values, we get
+\begin{align}
+    \pr{A \mid W} = &\displaystyle{\frac{\displaystyle{\frac{1}{5}} \times {e}^{\displaystyle - 2}}{\displaystyle{\frac{1}{5}} \times {e}^{\displaystyle - 2} + \displaystyle{\frac{4}{5}} \times {e}^{\displaystyle - 6} }}\\[0.4cm]
+    = & 0.93173845935
+\end{align}
+So the probability that the Bulb is manufactured in Plant A given that it works after a year is 0.93173845935.

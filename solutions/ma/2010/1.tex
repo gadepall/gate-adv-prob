@@ -1,0 +1,26 @@
+%
+Given,
+\begin{align}
+   \label{ma2010-1:(2.0.1)} \pr{E} &= 0.4 \\
+   \label{ma2010-1:(2.0.2)} \pr{E+F} &= 0.8 \\
+    \pr{E|F} &= 0.3
+\end{align}
+By definition,
+\begin{align}
+    \pr{E|F} &= \frac{\pr{EF}}{\pr{F}} \\
+    \implies \pr{EF} &= \pr{E|F} \times \pr{F} \\
+    \label{ma2010-1:(2.0.6)}\implies \pr{EF} &= 0.3 \times \pr{F}
+\end{align}
+Now using the identity,
+\begin{align}
+    \pr{E+F} &= \pr{E} + \pr{F} - \pr{EF}
+\end{align}
+From \eqref{ma2010-1:(2.0.1)},\eqref{ma2010-1:(2.0.2)} and \eqref{ma2010-1:(2.0.6)}
+\begin{align}
+    \implies 0.8 &= 0.4 + \pr{F} - \brak{0.3 \times \pr{F}} \\
+    \implies 0.4 &= \brak{1-0.3} \times \pr{F} \\
+    \implies \pr{F} &= \frac{0.4}{0.7}
+\end{align}
+\begin{equation}
+    \boxed{\pr{F} = \frac{4}{7}}
+\end{equation}
