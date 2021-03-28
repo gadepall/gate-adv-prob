@@ -1,0 +1,67 @@
+Let 
+\begin{align}
+\label{eq:dice_pmf_xi}
+p_{X_i}(k)=\pr{X_i=k}=
+\begin{cases}
+p(1-p)^{k-1} & n=1,2,...
+\\
+0 & otherwise
+\end{cases}
+\end{align}
+where i=1,2
+\begin{align}
+\pr{A|B}=\frac{\pr{AB}}{\pr{B}}
+\end{align}
+\begin{align}
+(X_1 = 2) \cap (X_1 + X_2 = 4)=\brak{X_1=2,X_2=2}
+\end{align}
+Thus,
+\begin{align}
+  \pr{X_1 = 2 | X_1 + X_2 = 4}&=\frac{\pr{X_1=2,X_2=2}}{\pr{X_1+X_2=4}}
+ \end{align}
+ Since the two events are independent,
+\begin{align}\label{result}
+  \pr{X_1 = 2 | X_1 + X_2 = 4}=\frac{\pr{X_1=2}\pr{X_2=2}}{\pr{X_1+X_2=4}}
+ \end{align}
+Let
+\begin{align}\label{eq:dice_xdef}
+X=X_1+X_2
+\end{align}
+From \eqref{eq:dice_xdef},
+\begin{align}
+p_X(n) &= \pr{X_1 + X_2 = n} = \pr{X_1  = n -X_2}
+\\
+&= \sum_{k}^{}\pr{X_1  = n -k | X_2 = k}p_{X_2}(k)
+\label{eq:dice_x_sum}
+\end{align}
+after unconditioning.  $\because X_1$ and $X_2$ are independent,
+\begin{multline}
+\pr{X_1  = n -k | X_2 = k} 
+\\
+= \pr{X_1  = n -k}
+= p_{X_1}(n-k)
+\label{eq:dice_x1_indep}
+\end{multline}
+From \eqref{eq:dice_x_sum} and \eqref{eq:dice_x1_indep},
+\begin{align}
+p_X(n) = \sum_{k}^{}p_{X_1}(n-k)p_{X_2}(k) = p_{X_1}(n)*p_{X_2}(n)
+\label{eq:dice_x_conv}
+\end{align}
+where $*$ denotes the convolution operation. 
+%\cite{proakis_dsp}.  
+Substituting from \eqref{eq:dice_pmf_xi}
+in \eqref{eq:dice_x_conv},
+\begin{align}
+p_X(n)& = \sum_{k=1}^{n-1}p_{X_1}(n-k)p_{X_2}(k)\\
+& = \sum_{k=1}^{n-1} (1-p)^{k-1} p \cdot (1-p)^{n-k-1} p \\ & = (1-p)^{n-2} p^2 \sum_{k=1}^{n-1} 1 \\& = (n-1) (1-p)^{n-2}p^2\label{ref}\end{align}
+From \eqref{ref} and \eqref{eq:dice_pmf_xi} we have
+\begin{align}
+&\pr{X_1=2}=\pr{X_2=2}=p(1-p)\\
+&\pr{X_1+X_2=4}=3(1-p)^2p^2
+\end{align}
+Substituting in \eqref{result}
+\begin{align}
+ \pr{X_1 = 2 | X_1 + X_2 = 4}
+ &=\frac{(1-p)^2p^2}{3(1-p)^2p^2}\\
+ &=\frac{1}{3}
+\end{align}

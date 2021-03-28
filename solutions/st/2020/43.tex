@@ -1,0 +1,50 @@
+Given,
+the conditional probability density function of X given $Y=y$,
+\begin{align}
+f_{X|Y=y}(x)=ye^{-yx} \:,x>0 \label{st2020-43:a}
+\end{align}
+and, the marginal probability density function of Y,
+\begin{align}
+g(y)=ye^{-y}\:,y>0 \label{st2020-43:b}
+\end{align}
+let the joint probability density function of (X,Y) be $f_{X,Y}(x,y)$.
+We know that,
+\begin{align}
+f_{X|Y=y}(x)=\frac{f_{X,Y}(x,y)}{g(y)}  \label{st2020-43:c}
+\end{align}
+using \eqref{st2020-43:a} and \eqref{st2020-43:b} in \eqref{st2020-43:c},
+\begin{align}
+f_{X,Y}(x,y) =y^{2}e^{-y(x+1)} \:,x,y>0 \label{st2020-43:d}
+\end{align}
+let the marginal probability density function of X be $f_{X}(x)$,
+as we know ,
+\begin{align}
+f_{X}(x)= \int_{0}^{\infty}{f_{X,Y}(x,y)}\,dy \label{st2020-43:e}
+\end{align}
+using \eqref{st2020-43:d} in \eqref{st2020-43:e},
+\begin{align}
+f_{X}(x) &=\int_{0}^{\infty}{y^{2}e^{-y(x+1)}}\,dy\\
+&=\frac{2}{(x+1)^{3}} \:,x>0\label{st2020-43:f}
+\end{align}
+The conditional probability density function of Y given $X=x$ is given by,
+\begin{align}
+f_{Y|X=x}(y) =\frac{f_{X,Y}(x,y)}{f_{X}(x)} \label{st2020-43:g}
+\end{align}
+using \eqref{st2020-43:d} and \eqref{st2020-43:f} in \eqref{st2020-43:g},
+\begin{align}
+ f_{Y|X=x}(y) =\frac{y^{2}e^{-y(x+1)}(x+1)^{3}}{2} \:,x,y>0
+\end{align}
+The conditional probability density function of Y given $X=1$ is given by,
+\begin{align}
+ f_{Y|X=1}(y) =4y^{2}e^{-2y}  \:,y>0 \label{st2020-43:h}
+\end{align}
+We need to find $E(Y|X=1)$ which is given by,
+\begin{align}
+ E(Y|X=1) &= \int_{0}^{\infty}{yf_{Y|X=1}(y)}\,dy \label{st2020-43:i}
+\end{align}
+using \eqref{st2020-43:h} in \eqref{st2020-43:i},
+\begin{align}
+E(Y|X=1) &= \int_{0}^{\infty}{4y^{3}e^{-2y}}\,dy\\
+  &= \left[\frac{-e^{-2y}(8y^{3} + 12y^{2} + 12y + 6)}{4}\right]_0^{\infty}\\
+        &=\frac{3}{2}
+\end{align}

@@ -1,0 +1,44 @@
+Let $A_{1} + A_{2} + A_{3} .... + A_{n}$ = S, \\
+$\pr{S}$ = Probability of atleast one event occuring
+De morgan's law states that $(A + B)^\prime = A^\prime B^\prime$  
+\begin{align}
+    \label{1.1}
+   \implies \pr{S} = 1 - \pr{S^\prime} \\ 
+   %\label{1.2}
+   1 - \pr{S^\prime}= 1 - \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime
+   ....A_{n}^\prime}
+   \label{ma2005:1}
+\end{align}
+$\forall$ i $\in$ {1,2,....n} \\
+Since, $A_{i}$ are independent.\\
+$\therefore$ Complements of $A_{i}$ are also independent.\\
+$\implies$ 
+\begin{equation}
+%\label{2.1}
+\pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime
+   ....A_{n}^\prime}=\prod_{i=1}^{n}\pr{A_{i}^\prime}
+   \label{ma2005:2}
+\end{equation}
+\begin{equation}
+%    \label{2.2}
+\pr{A_{i}} = 1 - \frac{1}{\alpha^i} \implies \pr{A_{i}^\prime} = \frac{1}{\alpha^i} \label{ma2005:5}
+\end{equation}
+substituting \eqref{ma2005:5} in \eqref{ma2005:2},
+\begin{equation}
+    \label{2.3}
+  \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime ....A_{n}^\prime} =  \prod_{i=1}^{n}\frac{1}{\alpha^i} \\
+\end{equation}
+\begin{equation}
+\label{2.4}
+   \prod_{i=1}^{n}\frac{1}{\alpha^i}=\frac{1}{\alpha^{\sum_{i}^{n}i}}= \frac{1}{\alpha^\frac{n(n+1)}{2}} 
+\end{equation}
+\begin{equation}
+%\label{2.5}
+    \therefore \pr{A_{1}^\prime A_{2}^\prime A_{3}^\prime ....A_{n}^\prime} = \pr{S^\prime} = \frac{1}{\alpha^\frac{n(n+1)}{2}} \label{ma2005:3}
+\end{equation}
+from equations \eqref{ma2005:1} and \eqref{ma2005:3} 
+\begin{equation}
+\label{2.6}
+\implies \pr{S} = 1 - \pr{S^\prime} = 1 - \frac{1}{\alpha^\frac{n(n+1)}{2}}
+\end{equation}
+$\therefore$ The correct option is \textbf{(a)}

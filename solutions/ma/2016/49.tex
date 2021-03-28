@@ -1,0 +1,34 @@
+
+\begin{align}
+    &\abs{\lfloor X\rfloor} = 1\\
+    \implies &\lfloor X\rfloor = 1\; or\; -1\\
+    \implies &X \in [1, 2) \cup [-1, 0)
+\end{align}
+Here 
+\begin{align*}
+    \lfloor X\rfloor = greatest\; integer\; less\; than\; or\; equal\; to\; X
+\end{align*}
+Thus required probability
+\begin{align}
+    &= \frac{\pr{X\in [-1,0)}}{\pr{X \in [1, 2) \cup [-1, 0)}}
+\end{align} 
+Using symmetry of standard normal random variable about y = 0, we have required probability 
+\begin{align}
+    &= \cfrac{\pr{X\in (0,1]}}{\pr{X \in [1, 2) \cup (0, 1])}}\\
+    &= \cfrac{\pr{X \in (0, 1]}}{\pr{X \in (0, 2)}}\\
+    &= \cfrac{\pr{X < 1} - \pr{X < 0}}{\pr{X < 2} - \pr{X < 0}}\\
+    &= \cfrac{\Phi(1) - \Phi(0)}{\Phi(2) - \Phi(0)}\\
+    &= \cfrac{\Phi(1) - \frac{1}{2}}{\Phi(2) - \frac{1}{2}}\label{bato}\\
+    &= \cfrac{0.841 - 0.5}{0.977 - 0.5}\label{gato}\\
+    &= 0.715
+\end{align}
+Here $\Phi(x)$ represents the standard normal cumulative density function. Thus 
+\begin{align}
+    X \sim \mathcal{0}{1}
+\end{align}
+and 
+\begin{align}
+    \Phi(x) = \int_{-\infty}^x f_X(x)dx
+\end{align}
+It can easily be seen that $\Phi(0) = \frac{1}{2}$, which has been used to obtain \eqref{bato}.
+\eqref{gato} was obtained by consulting tables for $\Phi(x)$

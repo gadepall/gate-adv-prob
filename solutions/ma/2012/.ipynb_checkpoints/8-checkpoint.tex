@@ -1,0 +1,17 @@
+Given $Y=3X+2$ \\
+    CDF of $Y$, 
+    \begin{align*}
+        F_y(Y) &= \Pr(Y\leq y) \\
+        &= \Pr\left(X \leq \frac{y-2}{3} \right) \\
+        &= F_x\left(\frac{y-2}{3}\right) \\
+    \end{align*}
+    Thus, pdf of $Y$ ,\begin{align*}
+        f_Y(y) &= \frac{1}{3}f_X\left(\frac{y-2}{3}\right)\\
+        &= \frac{1}{3} \times \begin{cases} \frac{3}{5}e^{-\frac{3}{5}\left(\frac{y-2}{3}\right)}  & y>2 \\
+        0 & y \leq 2 \\\end{cases}\\
+        &= \begin{cases} 
+      \frac{1}{5}e^{-\frac{1}{5} (y-2)} & y > 2 \\
+      0 & y \leq 2\\
+   \end{cases} 
+    \end{align*}
+Hence, correct option is 1. 

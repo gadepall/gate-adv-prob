@@ -1,0 +1,354 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage{amsthm}
+\usepackage{newtxtext}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage[inline]{enumitem}   
+\makeatletter
+% This command ignores the optional argument for itemize and enumerate lists
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+    {\descriptionlabel{#1}}
+  \hspace{\labelsep}%
+\else
+  \ifnum\enit@type=\z@
+       \refstepcounter{\@listctr}\fi
+    \quad\@itemlabel\hspace{\labelsep}%
+\fi}
+\makeatother
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[ #1 ]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+  %\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 5}
+\author{Gorantla Pranav Sai- CS20BTECH11018}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/pranav-159/ai1103_Probability_and_Random_variables/blob/main/Assignment_5/codes/experimentalVerification_GATE_MA_2016_Q10.py
+\end{lstlisting}
+%
+latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/pranav-159/ai1103_Probability_and_Random_variables/blob/main/Assignment_5/Assignment5.tex
+\end{lstlisting}
+\section{Problem(GATE 2016 (MA), Q.10)}
+   Let the probability density function of a random variable X be
+   $$
+   f(x)=
+   \begin{cases}
+   x~~~~~~~~~~~~~~~0\leqslant x < \dfrac{1}{2}\\
+   c(2x-1)^2~~~~~\dfrac{1}{2}\leqslant x <1\\
+   0 ~~~~~~~~~~~~~~~\text{Otherwise}
+   \end{cases}
+   $$
+   Then value of c is equal to ...
+\section{Solution(GATE 2016 (MA), Q.10)}
+
+
+We know that,
+\begin{align}
+\int_{-\infty}^{\infty}{f_x(x)}\,dx &= 1\\
+    \int_{-\infty}^{0}{f_x(x)}\,dx +\int_{0}^{\frac{1}{2}}{f_x(x)}\,dx&\nonumber\\ +\int_{\frac{1}{2}}^{1}{f_x(x)}\,dx +\int_{1}^{\infty}{f_x(x)}\,dx&=1\\
+    \int_{0}^{\frac{1}{2}}x\,dx+\int_{\frac{1}{2}}^{1}c(2x-1)^2\,dx&=1\\
+    \sbrak{\dfrac{x^2}{2}}_0^\frac{1}{2}+c \sbrak{\dfrac{(2x-1)^3}{6}}_\frac{1}{2}^1&=1\\
+    \dfrac{1}{8}+\dfrac{c}{6}&=1\\
+    c&=\dfrac{21}{4}
+\end{align}
+\hspace{2cm}$\therefore$ Required value of $c=\dfrac{21}{4}$
+
+\begin{figure}[h]
+   \includegraphics[width=\linewidth]{figures/plot.png}
+    \caption{Experimental and Theoritical pdf of X}
+    \label{fig:my_label}
+\end{figure}
+
+
+\end{document}    
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage{amsthm}
+\usepackage{newtxtext}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage[inline]{enumitem}   
+\makeatletter
+% This command ignores the optional argument for itemize and enumerate lists
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+    {\descriptionlabel{#1}}
+  \hspace{\labelsep}%
+\else
+  \ifnum\enit@type=\z@
+       \refstepcounter{\@listctr}\fi
+    \quad\@itemlabel\hspace{\labelsep}%
+\fi}
+\makeatother
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[ #1 ]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+  %\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 5}
+\author{Gorantla Pranav Sai- CS20BTECH11018}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/pranav-159/ai1103_Probability_and_Random_variables/blob/main/Assignment_5/codes/experimentalVerification_GATE_MA_2016_Q10.py
+\end{lstlisting}
+%
+latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/pranav-159/ai1103_Probability_and_Random_variables/blob/main/Assignment_5/Assignment5.tex
+\end{lstlisting}
+\section{Problem(GATE 2016 (MA), Q.10)}
+   Let the probability density function of a random variable X be
+   $$
+   f(x)=
+   \begin{cases}
+   x~~~~~~~~~~~~~~~0\leqslant x < \dfrac{1}{2}\\
+   c(2x-1)^2~~~~~\dfrac{1}{2}\leqslant x <1\\
+   0 ~~~~~~~~~~~~~~~\text{Otherwise}
+   \end{cases}
+   $$
+   Then value of c is equal to ...
+\section{Solution(GATE 2016 (MA), Q.10)}
+
+
+We know that,
+\begin{align}
+\int_{-\infty}^{\infty}{f_x(x)}\,dx &= 1\\
+    \int_{-\infty}^{0}{f_x(x)}\,dx +\int_{0}^{\frac{1}{2}}{f_x(x)}\,dx&\nonumber\\ +\int_{\frac{1}{2}}^{1}{f_x(x)}\,dx +\int_{1}^{\infty}{f_x(x)}\,dx&=1\\
+    \int_{0}^{\frac{1}{2}}x\,dx+\int_{\frac{1}{2}}^{1}c(2x-1)^2\,dx&=1\\
+    \sbrak{\dfrac{x^2}{2}}_0^\frac{1}{2}+c \sbrak{\dfrac{(2x-1)^3}{6}}_\frac{1}{2}^1&=1\\
+    \dfrac{1}{8}+\dfrac{c}{6}&=1\\
+    c&=\dfrac{21}{4}
+\end{align}
+\hspace{2cm}$\therefore$ Required value of $c=\dfrac{21}{4}$
+
+\begin{figure}[h]
+   \includegraphics[width=\linewidth]{figures/plot.png}
+    \caption{Experimental and Theoritical pdf of X}
+    \label{fig:my_label}
+\end{figure}
+
+
+\end{document}    
