@@ -1,0 +1,198 @@
+\documentclass{beamer}
+\usepackage{listings}
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{float}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+
+\title{GATE ST 2021 Q. 50}
+\author{Dishank - AI20BTECH11011}
+\date{}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}
+\frametitle{Question}
+
+\begin{block}{}
+Consider an amusement park where visitors are arriving according to a Poisson process with rate 1. Upon arrival, a visitor spends a random amount of time in the park and then departs. The time spent by the visitors is independent of one another, as well as of the arrival process and have common probability density function 
+\begin{align}
+    f(x) = 
+    \begin{cases}
+        e^{-x}, & x > 0\\
+        0,      & otherwise
+    \end{cases}
+\end{align}
+If at a given point, there are 10 visitors in the park, and p is the probability that there will be exactly two more arrivals before the next departure, then $\frac{1}{p}$ equals.....
+\end{block}
+
+\end{frame}
+\begin{frame}
+\frametitle{Solution}
+
+According to the question, we want the following events to occur in order: 
+\begin{enumerate}
+    \item First visitor, $P_1$, arrives while no one leaves
+    \item Second visitor $P_2$, arrives while no one leaves
+    \item One or more person leaves before the third visitor, $P_3$, arrives
+\end{enumerate}
+
+Let the above events be $E_1$, $E_2$ and $E_3$ respectively. Thus the required probability
+\begin{align}
+    &= \pr{E_1E_2E_3}\\
+    &= \pr{E_1}\pr{E_2|E_1}\pr{E_3|E_1E_2}\label{Requiredprobability}
+\end{align}
+\end{frame}
+\begin{frame}
+\frametitle{Solution Contd.}
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    Symbol  & Representation  \\
+    \hline
+    $X_1$            & Arrival time of $P_1$  \\
+    $X_1+X_2$        & Arrival time of $P_2$  \\
+    $X_1+X_2+X_3$    & Arrival time of $P_3$  \\
+    \hline
+    $Y_1,...,Y_{10}$ & Departure times of the  \\
+                     & 10 people in park currently\\
+    \hline
+    $X_1+Y_{11}$     & Departure time of $P_1$\\
+    $X_1+X_2+Y_{12}$ & Departure time of $P_2$\\
+    \hline
+    \end{tabular}
+    \caption{Notations}
+    \label{tab:my_label}
+\end{table}
+
+\end{frame}
+\begin{frame}
+\frametitle{Solution Contd.}
+
+First we present the following result which shall be useful later. For $n>0$,
+\begin{align}
+    \int_0^{\infty} xe^{-nx}dx = \cfrac{1}{n^2}\label{integrationresult}
+\end{align}
+
+The above can be derived using integration by parts as follows
+\begin{align}
+    \int_0^{\infty} xe^{-nx} dx &= -\cfrac{xe^{-nx}}{n} \biggr \vert_0^{\infty} 
+                                   + \cfrac{1}{n} \int_0^{\infty}e^{-nx}dx\\
+                                &= -\cfrac{e^{-nx}}{n^2}\biggr \vert_0^{\infty}\\
+                                &= \cfrac{1}{n^2}
+\end{align}
+
+\end{frame}
+\begin{frame}
+\frametitle{Solution Contd.}
+
+Next we note that $X_1$, $X_2$ and $X_3$ are identical random variables having Poisson distribution with rate 1. Thus for $i \in \{1,2,3\}$,
+\begin{align}
+    \lambda &= 1*X_i = X_i\\
+    k &= 1\\
+    \implies f_{X_i}(x) &= 
+    \begin{cases}
+        \cfrac{x^1e^{-x}}{1!} = x e^{-x} &x > 0\\
+        0                                &otherwise
+    \end{cases}
+\end{align}
+
+Also $Y_1,...,Y_{12}$ are identical random variables. Thus for $i \in \{1,...,12\}$, as given in question,
+\begin{align}
+    f_{Y_i}(x) &= 
+    \begin{cases}
+        e^{-x} & x > 0\\
+        0      & otherwise
+    \end{cases}\\
+    \implies F_{Y_i}(x) &= 
+    \begin{cases}
+        1-e^{-x} & x > 0\\
+        0        & otherwise
+    \end{cases}
+\end{align}
+
+\end{frame}
+\begin{frame}
+\frametitle{Solution Contd.}
+
+Now we find $\pr{E_1}$, $\pr{E_2|E_1}$ and $\pr{E_3|E_1E_2}$ in order to find the required probability from eq \eqref{Requiredprobability}.
+\begin{align}
+    \pr{E_1} &= \pr{Y_1,...,Y_{10} > X_1}\\
+             &= \int_{-\infty}^{\infty} \pr{Y_1,...,Y_{10} > x|X_1 = x}\\
+             &= \int_{-\infty}^{\infty} (1-F_{Y_1}(x))^{10} f_{X_1}(x)dx\\
+             &= \int_0^{\infty} xe^{-11x} dx\\
+             &= \cfrac{1}{121}
+\end{align}
+
+\end{frame}
+\begin{frame}
+\frametitle{Solution Contd.}
+
+\begin{multline}
+    \pr{E_2|E_1} = \pr{Y_1,...,Y_{10},X_1+Y_{11} > X_1 + X_2|Y_1,...,Y_{10} > X_1}
+\end{multline}
+Using memoryless property of exponential random variable,
+\begin{align}
+    \pr{E_2|E_1} &= \pr{Y_1,...,Y_{11} > X_2}\\
+                 &= \int_{-\infty}^{\infty} \pr{Y_1,...Y_{11} > x|X_2 = x}\\
+                 &= \int_{-\infty}^{\infty} (1-F_{Y_1}(x))^{11} f_{X_2}(x)dx\\
+                 &= \int_{0}^{\infty} x e^{-12x} dx\\
+                 &= \cfrac{1}{144}
+\end{align}
+
+\end{frame}
+\begin{frame}
+\frametitle{Solution Contd.}
+
+$\pr{E_3|E_1E_2} = $  
+\begin{multline}
+    \pr{min(Y_1,...,Y_{10},X_1+Y_{11},X_1+X_2+Y_{12}) \\
+    < X_1+X_2+X_3| Y_1,...,Y_{10},X_1+Y_{11} > X_1+X_2})
+\end{multline}
+
+\begin{multline}
+\implies \pr{E_3|E_1E_2} = 1 - \pr{Y_1,...,Y_{10},X_1+Y_{11},X_1+X_2+Y_{12} \\
+    > X_1+X_2+X_3| Y_1,...,Y_{10},X_1+Y_{11} > X_1+X_2})
+\end{multline}
+
+\end{frame}
+\begin{frame}
+\frametitle{Solution Contd.}
+Using memoryless property of exponential random variable,
+\begin{align}
+    \pr{E_3|E_1E_2} &= 1 - \pr{Y_1,...,Y_{12} > X_3}\\
+                    &= 1 - \int_{-\infty}^{\infty} \pr{Y_1,...Y_{12} > x|X_3 = x}\\
+                    &= 1 - \int_{-\infty}^{\infty} (1-F_{Y_1}(x))^{12} f_{X_3}(x)dx\\
+                    &= 1 - \int_{0}^{\infty} x e^{-13x} dx\\
+                    &= 1 - \cfrac{1}{169}\\
+                    &= \cfrac{168}{169}
+\end{align}
+
+Thus on substituting values in \eqref{Requiredprobability}, 
+\begin{align}
+    \pr{E_1E_2E_3} = \cfrac{1}{121}\times \cfrac{1}{144}\times \cfrac{168}{169}= 5.7 \times 10^{-5}
+\end{align}
+
+\end{frame}
+
+\end{document}

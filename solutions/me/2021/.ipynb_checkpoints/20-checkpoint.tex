@@ -1,0 +1,48 @@
+
+\begin{table}[htp]
+\centering
+    \resizebox{\columnwidth}{15mm}{
+\begin{tabular}{ |c|c|c|c|} 
+\hline
+Symbol & definition & value \\
+\hline
+X &customer demand in lead time& -\\
+\hline
+$X_1$ &normal R.V denotes daily customer demand & -\\
+\hline
+$\mu$ & Mean of $X_1$& 50 \\
+\hline
+$\sigma$ & Standard deviation of $X_1$ & 10\\
+\hline
+$\phi$ &CDF of standard normal R.V& -\\
+\hline
+\end{tabular}}
+\caption{Variables and their definitions}
+\label{me2021-20:table1}
+\end{table}
+Probability of satisfying customer demand is 0.95.
+Let Z be a standard normal R.V such that,
+\begin{align}
+    Z=\frac{X_1-\mu}{\sigma} \label{me2021-20:3}
+\end{align}
+Referring table\eqref{me2021-20:table1} to use in \eqref{me2021-20:3},
+\begin{align}
+    Z=\frac{X_1-50}{10}\label{me2021-20:4}
+\end{align}
+Given that,
+\begin{align}
+    \phi^{-1}(0.95)&=1.64\\
+    \implies \phi(1.64)&=0.95\\
+    \phi(1.64)&=\pr{Z\le1.64}=0.95\\
+    \implies Z\le1.64&\iff\frac{X_1-50}{10}\le1.64\\
+    \implies X_1-50 &\le 1.64(10)\\
+    \therefore X_1\le66.4
+\end{align}
+The demand in one day is independent of demand in the other day and the lead time is 5 days.
+\begin{align}
+    \implies X=5(X_1)=5(66.4)=332
+\end{align}
+Therefore the amount of safety
+stock that must be maintained by Robot Ltd. to
+achieve this demand fulfillment probability for
+the lead time period is 332 units.

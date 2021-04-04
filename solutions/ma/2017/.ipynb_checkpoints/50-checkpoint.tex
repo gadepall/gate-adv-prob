@@ -1,0 +1,22 @@
+Given
+\begin{enumerate}
+\item $\pr{E}=0.4$
+\item $\pr{F}=0.3$
+\item $\pr{F|E}=3 \pr{F|E'}$
+\end{enumerate}
+From given data
+\begin{align}
+\pr{F|E}=3 \pr{F|E'}\\
+\frac{\pr{FE}}{\pr{E}}=3\times \frac{\pr{FE'}}{\pr{E'}}\\
+\pr{EF}=2\times\pr{E'F}\label{eq:fac}
+\end{align}
+We know that
+\begin{align}
+\pr{F}=\pr{EF}+\pr{E'F} \label{eq:refer}
+\end{align}
+Using \eqref{eq:fac} and \eqref{eq:refer}, we get
+\begin{align}
+\pr{F}=\frac{3}{2}\times\pr{EF}\\
+\frac{\pr{EF}}{\pr{F}}=\frac{2}{3}\\
+\pr{E|F}=\frac{2}{3}\approx 0.66
+\end{align}

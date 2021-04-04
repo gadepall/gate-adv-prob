@@ -1,0 +1,34 @@
+
+Given probability density function for $(X,Y)$
+\begin{align}
+f_{X,Y}(x,y)&=\frac{1}{\pi}e^{(\frac{3}{2}xy-\frac{25}{32}x^2-2y^2)} \label{st2021-44:1} \\ 
+-\infty &< x,y < \infty
+\end{align}
+Joint pdf of bivariate normal distribution $N(\mu_x,\mu_y,\sigma_x^2,\sigma_y^2,\rho)$ is
+\begin{align}
+f_{X,Y}(x,y)&=\frac{1}{2\pi\sigma_x\sigma_y\sqrt{1-p^2}} \times \notag \\ &e^{\frac{-1}{2(1-p^2)}\sbrak{\sbrak{\frac{(x-\mu_x)}{\sigma_x}}^2+\sbrak{\frac{(y-\mu_y)}{\sigma_y}}^2-2\rho\sbrak{\frac{(x-\mu_x)}{\sigma_x}\frac{(y-\mu_y)}{\sigma_y}}}} \label{st2021-44:eq}
+\end{align}
+Comparing \eqref{st2021-44:eq} and \eqref{st2021-44:1} we get 
+\begin{table}[h!]
+\resizebox{7cm}{!}
+{
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\mu_x$ & $\mu_y$ & $\sigma_x$ & $\sigma_y$ & $\rho$ \\
+\hline
+$0$ & $0$ & $1$ & $\frac{5}{8}$ & $\frac{3}{5}$\\
+\hline
+\end{tabular}
+}
+\caption{Table 1} 
+\label{st2021-44:tab:1}
+\end{table}
+We need to find $E(XY)$
+\begin{align}
+E(XY)&=\rho \sigma_x\sigma_y+\mu_x\mu_y \label{st2021-44:eq:3}
+\end{align}
+Substituting values in table\eqref{st2021-44:tab:1} in \eqref{st2021-44:eq:3} we get
+\begin{align}
+E(XY)&=\frac{3}{8} \label{st2021-44:6}\\
+\therefore 8E(XY)&=3
+\end{align}

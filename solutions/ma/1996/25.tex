@@ -1,0 +1,74 @@
+
+The \textbf{central limit theorem} states that whenever a random sample of size n is taken from any distribution with mean and variance, then the sample mean will be approximately normally distributed with mean and variance. The larger the value of the sample size, the better the approximation to the normal.
+\begin{align}
+\tag{1.1}
+    Z_{n}=\frac{\bar{Y}-\mu}{\frac{\sigma}{\sqrt{n}}}
+    \label{ma1996-25:eq:1}
+\end{align}
+From equation \ref{ma1996-25:eq:1}
+\begin{align}
+    \tag{1.2}
+    \bar{Y}=Z_{n}\brak{\frac{\sigma}{\sqrt{n}}}+\mu
+\end{align}
+\begin{align}
+\tag{1.3}
+\pr{\frac{1}{8}<\Bar{Y}<\frac{3}{8}}
+&=\pr{\frac{1}{8}<Z_{n}\brak{\frac{\sigma}{\sqrt{n}}}+\mu<\frac{3}{8}}\\
+\tag{1.4}  
+&=\pr{\frac{\frac{1}{8}-\mu}{\frac{\sigma}{\sqrt{n}}}<Z_{n}<\frac{\frac{3}{8}-\mu}{\frac{\sigma}{\sqrt{n}}}}
+\label{ma1996-25:eq;123}
+\end{align}
+$\bar{Y}$:Mean of the randomly selected 15 variables
+\begin{align}
+\tag{1.5}
+    \bar{Y}=\frac{Y_{1}+Y_{2}+..Y_{15}}{15}
+\end{align}
+Mean of probability density function is
+\begin{align}
+\tag{1.6}
+\mu&=\int_{-\infty}^{\infty}yf(y)dy\\
+\tag{1.7}
+    &=\int_{0}^{1}y\times 3(1-y)^{2}dy\\
+\tag{1.8}
+    &=\frac{1}{4}
+\end{align}
+Variance of probability density function is
+\begin{align}
+\tag{1.9}
+\sigma^{2}&=E[y^{2}]-(E[y])^{2}\\
+\tag{1.10}
+\label{ma1996-25:eq;2}
+      &=\brak{\int_{0}^{1}y^{2}f(y)dy} - \brak{\frac{1}{4}}^{2}
+\end{align}
+\begin{align}
+\tag{1.11}
+    \int_{0}^{1}y^{2}f(y)dy &= \int_{0}^{1}y^{2}\times3(1-y)^{2}dy\\
+\tag{1.12}
+                            &=3\int_{0}^{1}(y-y^{2})^{2}dy\\
+\tag{1.13}
+\label{ma1996-25:eq;3}
+                            &=\frac{1}{10}
+\end{align}
+Substituting equation \ref{ma1996-25:eq;3} in equation \ref{ma1996-25:eq;2}
+\begin{align}
+\tag{1.14}
+ \sigma^{2}&=\frac{1}{10}-\frac{1}{16}\\
+\tag{1.15}
+           &=\frac{3}{80}
+\end{align}
+Using Q function in equation \ref{ma1996-25:eq;123} we have,
+\begin{align}
+\notag
+\pr{\frac{1}{8}<\Bar{Y}<\frac{3}{8}}
+&=\pr{\frac{\frac{1}{8}-\mu}{\frac{\sigma}{\sqrt{n}}}<Z_{n}<\frac{\frac{3}{8}-\mu}{\frac{\sigma}{\sqrt{n}}}}\\
+\tag{1.16}
+&=\pr{\frac{\frac{1}{8}-\mu(y)}{\frac{\sigma}{\sqrt{n}}}<Z_{n}<\frac{\frac{3}{8}-\mu(y)}{\frac{\sigma}{\sqrt{n}}}}\\
+\tag{1.17}
+&=Q\brak{\frac{\frac{-1}{8}}{\sqrt{\frac{3}{80}}}}-Q\brak{\frac{\frac{1}{8}}{\sqrt{\frac{3}{80}}}}\\
+\tag{1.18}
+&=1-2Q\brak{\frac{\frac{1}{8}}{\sqrt{\frac{3}{80}}}}\\
+\tag{1.19}                             
+&=1-2Q\brak{0.645}\\
+\tag{1.20}                             
+&=0.9938
+\end{align}

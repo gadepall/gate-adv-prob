@@ -1,0 +1,110 @@
+
+A sequence of random variables $Y_1,Y_2,Y_3\hdots$ converges, in probability, to a random variable $Y$ if
+\begin{align}
+    \lim_{n\rightarrow \infty}\Pr{(\abs{Y_n-Y}\geq \epsilon)} = 0 \quad \forall \epsilon >0
+\end{align}
+Similarly, a sequence of random variables $Y_1,Y_2,Y_3\hdots$ converges, in mean square, to a random variable $Y$ if
+\begin{align}
+    \lim_{n\rightarrow \infty} E(\abs{Y_n-Y}^2) = 0 
+\end{align}
+A random variable converges, in probability, to a value if it converges, in mean square, to the same particular value by Markov's Inequality. Proof for this is: For any $\epsilon > 0$
+\begin{align}
+    \Pr{(\abs{Y_n-Y}\geq \epsilon)} = \Pr{(\abs{Y_n-Y}^2\geq \epsilon^2)}
+\end{align}
+\begin{multline}
+    \Pr{(\abs{Y_n-Y}\geq \epsilon)}  \leq \frac{E\abs{Y_n-Y}^2}{\epsilon^2} 
+    \\\text{ (by Markov's Inequality)}
+\end{multline}
+ 
+\begin{align}
+    \lim_{n\rightarrow \infty} E(\abs{Y_n-Y}^2) = 0 
+    \\0 \leq  \lim_{n\rightarrow \infty}\Pr{(\abs{Y_n-Y}\geq \epsilon)}  \leq \frac{0}{\epsilon^2}
+    \\   \lim_{n\rightarrow \infty}\Pr{(\abs{Y_n-Y}\geq \epsilon)} = 0 \quad \forall \epsilon >0
+\end{align}
+Given in the question that $\{X_j\}$ is a sequence of random variables with
+\begin{align}
+    \Pr{(X_j=1)} = \frac{1}{4}
+    \\\Pr{(X_j=0)} + \Pr{(X_j=1)} = 1
+    \\\Pr{(X_j=0)} = 1 - \frac{1}{4} = \frac{3}{4}
+\end{align}
+\begin{align}
+    X_j \in \{0,1\} 
+\end{align}
+Since $0^2 = 0$ and $1^2 = 1$, 
+\begin{align}
+    X_j^2 = X_j \quad \forall j \in \{1, 2,\hdots, n\}
+\end{align}
+Thus, 
+\begin{align}
+    Y_n &= \frac{1}{n} \sum_{j=1}^{n}X_j^2 
+    \\&= \frac{1}{n} \sum_{j=1}^{n}X_j
+    \\\Pr{(Y_n = y)} &= \comb{n}{ny} \brak{\frac{1}{4}}^{ny} \brak{\frac{3}{4}}^{n-ny}
+\end{align}
+Let us assume
+\begin{align}
+    k &= ny
+    \\k &\in \{0,1,2,\hdots,n-1,n\}
+    \\ \Pr{(Y_n = \frac{k}{n})} &= \comb{n}{k} \brak{\frac{1}{4}}^{k} \brak{\frac{3}{4}}^{n-k}
+\end{align}
+\begin{align}
+    E\brak{\abs{Y_n-\frac{1}{4}}^2} &= E\brak{Y_n^2 - \frac{1}{2}Y_n + \frac{1}{16}}
+    \\&= E(Y_n^2) - \frac{1}{2}E(Y_n) + \frac{1}{16} \label{ma2018-25:equation 0}
+\end{align}
+\begin{align}
+    E(Y_n^2) &= \sum_{k=0}^n\brak{\frac{k}{n}}^2\Pr{\brak{Y_n=\frac{k}{n}}}
+    \\&= \sum_{k=0}^{n} \brak{\frac{k^2}{n^2}}\comb{n}{k} \brak{\frac{1}{4}}^{k} \brak{\frac{3}{4}}^{n-k}
+\end{align}
+\begin{multline}
+    E(Y_n^2) = 0 + \frac{1}{n^2}\times n\brak{\frac{1}{4}}^{1} \brak{\frac{3}{4}}^{n-1} + \\\sum_{k=2}^{n} \brak{\frac{k}{n}}^2\times\frac{n(n-1)}{k(k-1)}
+    \times\comb{n-2}{k-2}\brak{\frac{1}{4}}^{k} \brak{\frac{3}{4}}^{n-k}
+\end{multline}
+\begin{multline}
+    E(Y_n^2) =  \frac{1}{4n}\brak{\frac{3}{4}}^{n-1} + \frac{n-1}{n} 
+   \\\times\sum_{k=2}^{n} \brak{\frac{k}{k-1}}\comb{n-2}{k-2}\brak{\frac{1}{4}}^{k} \brak{\frac{3}{4}}^{n-k}
+\end{multline}
+\begin{multline}
+    E(Y_n^2)  = \frac{1}{4n}\brak{\frac{3}{4}}^{n-1} \\+ \frac{n-1}{n} 
+   \brak{\sum_{k=2}^{n}\comb{n-2}{k-2}\brak{\frac{1}{4}}^{k} \brak{\frac{3}{4}}^{n-k} }
+   \\+\frac{n-1}{n} \brak{\sum_{k=2}^{n}\frac{1}{k-1}\comb{n-2}{k-2}\brak{\frac{1}{4}}^{k} \brak{\frac{3}{4}}^{n-k} } 
+\end{multline}
+\begin{multline}
+    E(Y_n^2)  = \frac{1}{4n}\brak{\frac{3}{4}}^{n-1} + \frac{n-1}{n}\\ \times\frac{1}{16} 
+   \brak{\sum_{k=2}^{n}\comb{n-2}{k-2}\brak{\frac{1}{4}}^{k-2} \brak{\frac{3}{4}}^{(n-2)-(k-2)} }
+   \\+\frac{1}{n} \brak{\sum_{k=2}^{n}\frac{n-1}{k-1}\comb{n-2}{k-2}\brak{\frac{1}{4}}^{k} \brak{\frac{3}{4}}^{n-k} }
+\end{multline}
+\begin{multline}
+     E(Y_n^2)= \frac{1}{4n}\brak{\frac{3}{4}}^{n-1} \\+ \frac{n-1}{16n} 
+   \brak{\sum_{j=0}^{n-2}\comb{n-2}{j}\brak{\frac{1}{4}}^{j} \brak{\frac{3}{4}}^{(n-2)-j} }
+   \\+\frac{1}{4n} \brak{\sum_{k=2}^{n}\comb{n-1}{k-1}\brak{\frac{1}{4}}^{k-1} \brak{\frac{3}{4}}^{(n-1)-(k-1)} } 
+\end{multline}
+\begin{multline}
+    E(Y_n^2) = \frac{1}{4n}\brak{\frac{3}{4}}^{n-1} + \frac{n-1}{16n}\brak{\frac{1}{4} + \frac{3}{4}}^{n-2}
+   \\+\frac{1}{4n} \brak{\sum_{j=1}^{n-1}\comb{n-1}{j}\brak{\frac{1}{4}}^{j} \brak{\frac{3}{4}}^{(n-1)-j} }
+\end{multline}
+\begin{multline}
+   E(Y_n^2) = \frac{1}{4n}\brak{\frac{3}{4}}^{n-1} + \frac{n-1}{16n}
+   \\+\frac{1}{4n} \brak{\brak{\frac{1}{4} + \frac{3}{4}}^{n-1} - \brak{\frac{3}{4}}^{n-1}} 
+\end{multline}
+\begin{align}
+    E(Y_n^2) &= \frac{1}{4n}\brak{\frac{3}{4}}^{n-1} + \frac{n-1}{16n} +\frac{1}{4n} - \frac{1}{4n}\brak{\frac{3}{4}}^{n-1}
+    \\&= \frac{1}{16} + \frac{3}{16n} \label{ma2018-25:equation 2}
+\end{align}
+\begin{align}
+    E(Y_n) &= \sum_{k=0}^n\frac{k}{n}\Pr{\brak{Y_n=\frac{k}{n}}}
+    \\&= \sum_{k=0}^{n} \brak{\frac{k}{n}}\comb{n}{k} \brak{\frac{1}{4}}^{k} \brak{\frac{3}{4}}^{n-k}
+    \\&= 0 + \sum_{k=1}^{n} \frac{k}{n}\times\frac{n}{k}\times\comb{n-1}{k-1}\brak{\frac{1}{4}}^{k} \brak{\frac{3}{4}}^{n-k}
+    \\&= \frac{1}{4}\sum_{j=0}^{n-1} \comb{n-1}{j}\brak{\frac{1}{4}}^{j} \brak{\frac{3}{4}}^{(n-1)-j}
+    \\&= \frac{1}{4}\brak{\frac{1}{4} + \frac{3}{4}}^{n-1}
+    \\&= \frac{1}{4} \label{ma2018-25:equation 3}
+\end{align}
+Using equations \eqref{ma2018-25:equation 2} and \eqref{ma2018-25:equation 3} in \eqref{ma2018-25:equation 0},
+\begin{align}
+    E\brak{\abs{Y_n-\frac{1}{4}}^2} &= \frac{1}{16}+ \frac{3}{16n}-\frac{1}{2}\times\frac{1}{4} + \frac{1}{16}
+    \\&= \frac{3}{16n}
+\end{align}
+\begin{align}
+    \lim_{n\rightarrow \infty} E\brak{\abs{Y_n-\frac{1}{4}}^2} &=  \lim_{n\rightarrow \infty}  \frac{3}{16n}
+    \\&= \frac{3}{16}\lim_{n\rightarrow \infty}\frac{1}{n}
+    \\&= 0
+\end{align}
+Thus, $Y_n$ converges, in mean square, to $\frac{1}{4}$ and hence $Y_n$ converges, in probability, to $\frac{1}{4}$.

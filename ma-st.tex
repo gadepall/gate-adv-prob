@@ -363,16 +363,16 @@ The probability that at least two chocolates are identical is
 \solution
 \input{solutions/ma/2021/8.tex}
 %
-%\item Consider the trinomial distribution with the probability mass function 
-% \begin{multline}
-%     \nonumber \p{x}{y}\\=\brak{\frac{7!}{x!y!(7-x-y)!}}(0.6)^x(0.2)^y(0.2)^{7-x-y}
-% \end{multline}
-% where $x\geq0 , y\geq0 \;and\; {x+y}\leq7$.
-% Then $\mean{Y|X=3}$ is equal to
+Consider the trinomial distribution with the probability mass function 
+\begin{multline}
+    \nonumber \pr{X=x,Y=y}\\=\brak{\frac{7!}{x!y!(7-x-y)!}}(0.6)^x(0.2)^y(0.2)^{7-x-y}
+\end{multline}
+where $x\geq0 , y\geq0 \;and\; {x+y}\leq7$.
+Then $E\brak{Y|X=3}$ is equal to
 %
 \\
 \solution
-%\input{solutions/st/2019/45.tex}
+\input{solutions/st/2019/45.tex}
 \item Let E and F be any two events with $P(E \cup F) = 0.8$, $P(E) = 0.4$ and $P(E|F) = 0.3$ then P(F) is \newline
 \begin{enumerate}
 \item $\frac{3}{7}$ 
@@ -403,6 +403,314 @@ They are mixed and sold together. Given that a bulb purchased at random is worki
 \solution
 \input{solutions/ma/2014/36.tex}
  %
+\item The lifetime of two brands of bulbs X and Y are exponentially distributed with the mean life of 100 hours. Bulb X is switched on 15 hours after bulb Y has been switched on. The probability that bulb X fails before bulb Y is 
+\begin{enumerate}[label=(\Alph*)]
+    \item $\frac{15}{100}$ \\
+    \item $\frac{1}{2}$ \\
+    \item $\frac{85}{100}$ \\
+    \item 0 
+  \end{enumerate}
+  \solution
+  \input{solutions/ma/2005/26.tex}
+  %
+  \item Let $X_{1},X_{2},\dots$, be a sequence of independent and identically distributed random variables with $P(X_{1}=1)=\dfrac{1}{4}$ and $P(X_{1}=2)=\dfrac{3}{4}$. If $\bar X_{n}=\dfrac{1}{n}\displaystyle\sum_{i=1}^{n}X_{i}$,  for $n=1,2,\dots$, then $\displaystyle\lim_{n\to\infty}P(\bar X_{n} \leq 1.8)$ is equal to
+  \\
+  \solution
+  \input{solutions/ma/2015/32.tex}
+  %
+  \item Let $X$ be the number of heads in 4 tosses of a fair coin by Person 1 and let $Y$ be the number of heads in 4 tosses of a fair coin by Person 2. Assume that all the tosses are independent. Then the value of $\Pr{(X=Y)}$ correct up to three decimal places is $\rule{1.6cm}{0.15mm}$ .
+%
+  \solution
+  \input{solutions/ma/2018/53.tex}
+\item The probability density function of a random variable X is
+\begin{equation}
+f(x)=
+\begin{cases}
+\frac{1}{\lambda}e^{\brak{-\frac{x}{\lambda}}}, & x>0\\
+0, & x\leq 0
+\end{cases}
+\end{equation}
+where $\lambda>0.$ For testing the hypothesis $H_{0}:\lambda=3$ against $H_{1}:\lambda=5$, a test is given as "Reject $H_0$ if $X\geq 4.5$".The probability of type 1 error and power of the test are respectively: 
+\begin{enumerate}
+\begin{multicols}{2}
+\setlength\itemsep{1em}
+\item 0.1353 and 0.4966\\
+\item 0.1827 and 0.379\\
+\item 0.2021 and 0.4493\\
+\item 0.2231 and 0.4066
+\end{multicols}
+\end{enumerate}
+%
+  \solution
+  \input{solutions/ma/2012/30.tex}
+  %
+  \item  Let $E$ and $F$ be any two events with $\pr{E}=0.4, \pr{F}=0.3$
+and $\pr{F|E}=3 \pr{F|E'}$. Then $\pr{E|F}$ equals ......
+\\
+  \solution
+  \input{solutions/ma/2017/50.tex}
+%
+\item Let a random variable $X$ follow the exponential distribution with mean 2. Define $Y$ such that:
+\begin{align}
+   Y =  \left[X-2\right|X>2]\nonumber
+\end{align}
+Then $E(Y)$ is equal to:\\
+\\(A) $\frac{1}{4}$\\
+\\(B) $\frac{1}{2}$\\
+\\(C) 1\\
+\\(D) 2\\
+\item If A and B are two events and the probability $\Pr(B) \neq 1$,then\\
+\begin{equation}
+    \frac{\Pr(A)-\Pr(A \cap B)}{1-\Pr{(B)}}
+\end{equation}
+equals
+\begin{enumerate}
+\begin{multicols}{2}
+\setlength\itemsep{1em}
+\item $\Pr{(A|\bar{B})}$\\
+\item $\Pr{(A|B)}$\\
+\item $\Pr{(\bar{A}|B)}$\\
+\item $\Pr{(\bar{A}|\bar{B})}$
+\end{multicols}
+\end{enumerate}
+  \solution
+  \input{solutions/ma/1997/18.tex}
+%
+\item If a random variable X assumes only positive integral values ,with the probability
+\begin{equation}
+ P(X=x)=\frac{2}{3}\brak{\frac{1}{3}}^{x-1},x=1,2,3,....,   
+\end{equation}
+then $E(X)$ is 
+\begin{enumerate}
+\begin{multicols}{2}
+\item $ \frac{2}{9}$\\
+\item $\frac{2}{3}$\\
+\item $ 1$\\
+\item $\frac{3}{2}$
+\end{multicols}
+\end{enumerate}
+  \solution
+  \input{solutions/ma/2012/29.tex}
+%
+\item Let $X ,Y$ be continuous random variables with joint density function
+\begin{align*}
+    f_{X,Y}(x,y)=\begin{cases}
+    e^{-y}(1-e^{-x}) \text{   if } 0< x<y<\infty\\
+    e^{-x}(1-e^{-y}) \text{   if } 0< y\leq x<\infty
+    \end{cases}
+\end{align*}
+Then The value of $E[X+Y]$ is 
+%
+\solution
+  \input{solutions/ma/2014/37.tex}
+%
+\item Suppose customers arrive at an ATM facility according to Poisson process with rate 5 customers per hour. The probability (rounded off to two decimal places) that no customer arrives at the ATM facility from 1:00pm to 1:18pm.
+%
+\solution
+  \input{solutions/st/2019/48.tex}
+%
+\item     Let the cumulative distribution function of the random variable X be given by 
+    $$F_{X}(x)=\left\{
+    \begin{array}{ll}
+      0 & x<0 \\
+      x & 0\leq x<1/2\\
+      (1+x)/2 & 1/2\leq x <1\\
+      1 & x\geq 1
+    \end{array} 
+    \right. $$
+    Then $\pr{X=1/2}=?$
+%
+\solution
+  \input{solutions/ma/2018/24/main.tex}
+%
+\item Let A and b be two events such that $\pr{B}=\frac{3}{4}$ and $\pr{A + B^{\prime}}=\frac{1}{2}$.If A and B are independent, then $\pr{A}$ equals
+\\
+\solution
+  \input{solutions/st/2021/14.tex}
+\item Let $(X,Y)$ have a bivariate normal distribution with the joint probability density function
+\begin{align}
+f_{X,Y}(x,y)=\frac{1}{\pi}e^{(\frac{3}{2}xy-\frac{25}{32}x^2-2y^2)}\\
+-\infty < x,y < \infty
+\end{align}
+Then $E(XY)$ equals 
+%
+\\
+\solution
+  \input{solutions/st/2021/44.tex}
+%
+\item Let $X_{1}$ be	an	exponential	random	variable with mean 1 and $X_{2}$ a gamma	random variable	with mean 2	and	variance 2.	If $X_{1}$ and $X_{2}$ are independently	distributed, then $\pr{X_1 < X_2}$ is equal	to ..........	
+\\
+\solution
+  \input{solutions/ma/2016/47.tex}
+%
+\item Let $\Omega = (\,0,1]\,$ be the sample space and let $P\brak{.}$ be a probability distribution given by\\
+\begin{align}
+P\brak{(\,0,x]\,} = 
+\begin{cases}
+   \frac{x}{2} & 0 \le x < \frac{1}{2}\\
+   x & \frac{1}{2} \le x \le 1
+\end{cases}
+\end{align}
+Find $P\brak{\frac{1}{2}}$
+\\
+\solution
+  \input{solutions/ma/2015/27/latex4.tex}
+%
+\item Let $(X,Y)$ be a two-dimensional random variable such that $E(X)=E(Y)=1/2$, $Var(X)=Var(Y)=1$ and $Cov(X,Y)=1/2$.
+Then, $P(|X-Y|>6)$ is
+\begin{enumerate}
+
+    \item less than 1/6
+    \item equal to 1/2
+    \item equal to 1/3
+    \item greater than 1/2
+
+\end{enumerate}
+\solution
+  \input{solutions/ma/2001/24.tex}
+
+\item Let \(X_1,X_2\)... be a sequence of independent and identically distributed random variable with
+\begin{align}
+    \pr{X_1=-1}=\pr{X_1=1}=1/2
+\end{align}
+Suppose for the standard normal random variable Z,
+\begin{align}
+&\pr{-0.1\leq Z \leq 0.1}=0.08 .\label{qneq} \\ \nonumber
+&\text{If } S_n= \sum_{i=1}^{n^2} X_i ,\text{then} \lim_{n\to\infty} \pr{S_n >\frac{n}{10}} =
+\end{align}
+\begin{enumerate}
+    \item 0.42
+    \item 0.46
+    \item 0.50
+    \item 0.54
+\end{enumerate}
+\solution
+  \input{solutions/ma/2007/55.tex}
+
+\item  Consider an amusement park where visitors are arriving according to a Poisson process with rate 1. Upon arrival, a visitor spends a random amount of time in the park and then departs. The time spent by the visitors is independent of one another, as well as of the arrival process and have common probability density function 
+\begin{align}
+    f(x) = 
+    \begin{cases}
+        e^{-x}, & x > 0\\
+        0,      & otherwise
+    \end{cases}
+\end{align}
+If at a given point, there are 10 visitors in the park, and p is the probability that there will be exactly two more arrivals before the next departure, then $\frac{1}{p}$ equals.....
+\solution
+  \input{solutions/st/2021/50/main.tex}
+
+\item  Let $\{X_n\}_{n\ge 1}$ be a sequence of independent and identically distributed random variables each having uniform distribution on [0,3]. Let $Y$ be a random variable, independent of $\{X_n\}_{n\ge 1}$, having probability mass function
+\begin{align}
+\pr{Y=k} = 
+\begin{cases}
+\frac{1}{(e-1)k!} & k=1,2,3\cdots \\
+0 & otherwise
+\end{cases}
+\end{align}
+Then $\pr{max\{X_1,X_2,\cdots X_Y\}\le 1}$ equals ............\\
+%
+\solution
+  \input{solutions/st/2021/48.tex}
+
+\item The characteristic function of a random variable X is given by
+\begin{align}
+\phi_{X}\brak{t}
+=
+\begin{cases}
+\frac{\sin{t}\cos{t}}{t}           & t \neq 0 \\
+1        & t = 0
+\end{cases}
+\end{align}
+Then $ P\brak{|X|\leq \frac{3}{2}} =$ 
+%
+\solution
+  \input{solutions/st/2020/16/Assignment5.tex}
+% %
+% \item Let $\{X_j\}$ be a sequence of independent Bernoulli random variables with $\mathbb{P}(X_j=1) = \frac{1}{4}$ and let $Y_n = \frac{1}{n} \sum_{j=1}^{n}X_j^2$. Then $Y_n$ converges, in probability, to $\rule{2cm}{0.15mm}$ .
+% %
+% \solution
+%   \input{solutions/ma/2018/25.tex}
+
+%
+\item Let $\{X_j\}$ be a sequence of independent Bernoulli random variables with $\mathbb{P}(X_j=1) = \frac{1}{4}$ and let $Y_n = \frac{1}{n} \sum_{j=1}^{n}X_j^2$. Then $Y_n$ converges, in probability, to $\rule{2cm}{0.15mm}$ .
+\solution
+  \input{solutions/ma/2018/25.tex}
+%
+\item The variable $x$ takes a value between $0$ and $10$ with uniform probability distribution. The variable $y$ takes a value between $0$ and $20$ with uniform probability distribution.The probability that sum of variables $(x+y)$ being greater than $20$ is
+%
+\item Robot Ltd. wishes to maintain enough safety
+stock during the lead time period between
+starting a new production run and its completion
+such that the probability of satisfying the
+customer demand during the lead time period
+is 95\%. The lead time periods is 5 days and
+daily customer demand can be assumed to follow
+the Gaussian (normal) distribution with mean
+50 units and a standard deviation of 10 units.
+Using $\phi^{-1}$(0.95) =1.64 , where $\phi$ represents the
+cumulative distribution function of the standard
+normal random variable, the amount of safety
+stock that must be maintained by Robot Ltd. to
+achieve this demand fulfillment probability for
+the lead time period is \rule{1cm}{0.15mm}  units (round off to
+two decimal places).
+%
+\solution
+  \input{solutions/me/2021/20.tex}
+%
+% \item 
+% Probability density function $p(x)$ of random variable x is as shown below. The value of a is
+% \begin{enumerate}[label=\Alph*)]
+%     \item $\frac{2}{c}$
+%     \item $\frac{1}{c}$
+%     \item $\frac{2}{(b+c)}$
+%     \item $\frac{1}{(b+c)}$
+% \end{enumerate}
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=\columnwidth]{solutions/in/2006/2/figures/convolution.png}
+% \caption{PDF}
+% \label{in2006-2:fig:BSC}
+% \end{figure}
+% %
+% \solution
+%   \input{solutions/in/2006/2/latex3.tex}
+% %
+\item Let X be a random variable having probability density function 
+\begin{align}
+\label{st2021-22:eq:qpdf_X}
+f\brak{x} = 
+\begin{cases}
+\frac{3}{13}(1-x)(9-x) & 0 < x < 1
+\\
+0 & \text{ otherwise}
+\end{cases}
+\end{align}
+Then $\dfrac{4}{3} E [X(X^2 -15X + 27 ) ] $ equals --- ( round of to two decimal places). \\
+\solution
+  \input{solutions/st/2021/22.tex}
+%
+\item Two independent events E and F are such that $P(E\cap F) = \displaystyle\frac{1}{6}$,$P(E^c\cap F^c)=\displaystyle\frac{1}{3}$ and $P(E)>P(F)$. Then $P(E)$ is
+\begin{enumerate}[label=(\Alph*)]
+    \item $\displaystyle\frac{1}{2}$\\
+    \item $\displaystyle\frac{2}{3}$\\
+    \item $\displaystyle\frac{1}{3}$\\
+    \item $\displaystyle\frac{1}{4}$
+\end{enumerate}
+%
+\solution
+  \input{solutions/ma/1999/1.28.tex}
+%
+\item Let $Y_{1},Y_{2},...,Y_{15}$ be a random sample of size 15 from the probability density function 
+\begin{align}
+\tag{Eq:1}
+    f_{y}(y)=3(1-y)^{2} , 0<y<1
+\end{align}
+Use the central limit theorem to approximate $P\brak{\frac{1}{8}<\Bar{Y}<\frac{3}{8}}$
+%
+\solution
+  \input{solutions/ma/1996/25.tex}
+
 
 \end{enumerate}
 \end{document}

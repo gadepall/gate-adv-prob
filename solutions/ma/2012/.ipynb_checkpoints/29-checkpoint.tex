@@ -1,0 +1,64 @@
+%
+  Given that random variable X  assumes only positive integral values and its probability is:
+  \begin{align}
+      P(X=x)=\frac{2}{3}\brak{\frac{1}{3}}^{x-1}
+  \end{align}
+  The expectation value E(X) is given by 
+  \begin{align}
+      E(X)=\sum_{i=1}^{\infty} i \times P(X=i)
+  \end{align}
+  Let $E(X)=S$\\
+  so,
+  \begin{align}
+      S&=\sum_{i=1}^{\infty} i \times P(X=i)\\
+    \implies S&=\sum_{i=1}^{\infty} i \times
+      \frac{2}{3}\brak{\frac{1}{3}}^{i-1}\label{ma2012-29:eq:0.0.5}\\
+     \implies S&=\frac{2}{3}+\sum_{i=2}^{\infty} i \times
+      \frac{2}{3}\brak{\frac{1}{3}}^{i-1}\label{ma2012-29:eq:0.0.6}
+  \end{align}
+  As
+  \begin{align}
+      \sum_{i=2}^{\infty} i \times
+      \frac{2}{3}\brak{\frac{1}{3}}^{i-1}=\sum_{i=1}^{\infty} (i+1)\times
+      \frac{2}{3}\brak{\frac{1}{3}}^{i}\label{ma2012-29:eq:0.0.7}
+  \end{align}
+  Now substituting  \eqref{ma2012-29:eq:0.0.7} in \eqref{ma2012-29:eq:0.0.6}
+  \begin{align}
+      \implies S&=\frac{2}{3}+\sum_{i=1}^{\infty} (i+1) \times
+      \frac{2}{3}\brak{\frac{1}{3}}^{i}
+  \end{align}
+  \begin{align}
+       \implies S&=\frac{2}{3}+\sum_{i=1}^{\infty} i \times
+      \frac{2}{3}\brak{\frac{1}{3}}^{i}+\sum_{i=1}^{\infty} 
+      \frac{2}{3}\brak{\frac{1}{3}}^{i}\label{ma2012-29:eq:0.0.9}
+  \end{align}
+   Dividing with 3 on both sides in \eqref{ma2012-29:eq:0.0.5} gives
+   \begin{align}
+      \frac{S}{3}=\sum_{i=1}^{\infty} i \times
+      \frac{2}{3}\brak{\frac{1}{3}}^{i}\label{ma2012-29:eq:0.0.10}
+  \end{align}
+  Now substituting \eqref{ma2012-29:eq:0.0.10} in \eqref{ma2012-29:eq:0.0.9} gives
+  \begin{align}
+     \implies S&=\frac{2}{3}+\frac{S}{3}+\sum_{i=1}^{\infty}\frac{2}{3}\brak{\frac{1}{3}}^{i}
+     \end{align}
+     \begin{align}
+     \implies \frac{2S}{3}&=\frac{2}{3}+\frac{2}{3}\sum_{i=1}^{\infty}\brak{\frac{1}{3}}^{i}
+  \end{align}
+  \begin{align}
+     \implies \frac{2S}{3}&=\frac{2}{3}\brak{
+     1+\sum_{i=1}^{\infty}\brak{\frac{1}{3}}^{i}}
+  \end{align}
+  \begin{align}
+     \implies S=1+\sum_{i=1}^{\infty}\brak{\frac{1}{3}}^{i}
+  \end{align}
+  \begin{align}
+     \implies S=1+\frac{\frac{1}{3}}{1-\frac{1}{3}}
+  \end{align}
+  \begin{align}
+     \implies S=1+\frac{1}{2}=\frac{3}{2}
+  \end{align}
+  \begin{align}
+     \implies E(X)=S=\frac{3}{2}
+  \end{align}
+  %
+  \textbf{$\therefore$ Option D is correct}    

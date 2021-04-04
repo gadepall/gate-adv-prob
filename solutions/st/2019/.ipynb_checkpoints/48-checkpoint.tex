@@ -1,0 +1,47 @@
+ Given, Poisson rate 
+ \begin{align}
+     \lambda = 5 \label{eq 2.0.1}
+ \end{align}
+ The time  interval is given as 1:00 pm to 1:18 pm
+ Then, the length of the interval 
+ \begin{align}
+    \tau &= \frac{18}{60} - \frac{0}{60}\\
+     &= \frac{3}{10}\label{eq 2.0.3}
+ \end{align}
+ Thus, if X is the number of arrivals in that interval, we can write
+ \begin{align}
+     X \sim Poisson\brak{\lambda\tau}
+     &= Poisson\brak{\frac{3}{2}} 
+ \end{align}
+ 
+ We know that, if $X\brak{n}$ has a Poisson distribution whose parameter is k then
+ \begin{align} \label{eq_0}
+	\Pr\brak{X=n}=\brak{\frac{k^n e^{-k}}{n!}}
+\end{align}
+CDF is:
+\begin{align}
+    F(X=n)=\sum_{x=0}^{n}\brak{\frac{k^n e^{-k}}{n!}}
+\end{align}
+ 
+ And also,
+\begin{align}
+    \Pr\brak{x < X \le y} = F\brak{y} - F\brak{x}\label{eq 2.0.7}
+\end{align}
+ Given,
+ \begin{align}
+     n = 0 \label{eq 2.0.6}
+ \end{align}
+ 
+So from \eqref{eq 2.0.7}
+\begin{align}
+    \Pr\brak{X = 0} = F\brak{0}
+\end{align}
+ 
+ Therefore, the probability that no customer arrives at the ATM facility from 1:00pm to 1:18pm is 
+ 
+  $\Pr\brak{X = 0}$
+ \begin{align}
+     &= \frac{e^{\frac{-3}{2}}\brak{\frac{3}{2}}^0}{0!}\\
+     &= e^{-3/2}\\
+     &\sim 0.22
+ \end{align}

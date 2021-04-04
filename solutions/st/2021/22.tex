@@ -1,0 +1,61 @@
+
+Let X be the random variable. To find 
+\begin{align}
+    \frac{4}{3} E[X(X^2 -15X + 27)]
+\end{align}
+Let,
+\begin{align}
+    g(X) &= X(X^2 -15X + 27)  \\
+         &= X^3 -15X^2 + 27X
+\end{align}
+Then for random variable X we have that,
+\begin{align}
+    E[g(X)] = \int_{-\infty}^{\infty} g(x)f(x) \,dx
+\end{align}
+The probability distribution of X is,
+\begin{align}
+\label{st2021-22:eq:spdf_X}
+f\brak{x} = 
+\begin{cases}
+\frac{3}{13}(1-x)(9-x) & 0 < x < 1
+\\
+0 & \text{ otherwise}
+\end{cases}
+\end{align}
+Using \ref{st2021-22:eq:spdf_X} we have,
+\begin{align}
+    E[g(X)] &= 0 +\int_{0}^{1} g(x)f(x) \,dx + 0
+\end{align}
+Where ,
+\begin{align}
+    f(x ) &= \frac{3}{13}(1-x)(9-x) \text{ and}  \\
+    g(x) &= x^3 -15x^2 + 27x
+\end{align}
+Using Integration by substitution let,
+\begin{align*}
+    t &= x^3 - 15x^2 + 27x \\
+    \,dt &= 3x^2 - 30x + 27 \\
+         &= 3(1-x)(9-x)
+\end{align*}
+The corresponding limits are,
+\begin{align}
+    \text{For } x &=0  \implies t = 0^3 -15\times 0^2 + 27 \times 0 = 0 \\
+        \text{For } x &=1  \implies t = 1^3 -15\times 1^2 + 27 \times 1 = 13
+\end{align}
+Therefore we have,
+\begin{align}
+    E[g(X)] &= \frac{1}{13} \int_{0}^{13} t \,dt \\
+    & = \frac{1}{13} \times \brak{\frac{t^2}{2}}  \Biggr|_{0}^{13} \\
+    &= \frac{1}{13} \times \frac{13^2}{2} \\
+    & = \frac{13}{2} 
+\end{align}
+Thus, 
+\begin{align}
+    \frac{4}{3} E[g(X)] & =  \frac{4}{3} \times \frac{13}{2} \\
+    &= \frac{26}{3} \\
+    &= 8.67  \text{ (rounded off)}
+\end{align}
+Therefore,
+\begin{align}
+    \frac{4}{3} E[X(X^2 -15X + 27)] & =  8.67
+\end{align}

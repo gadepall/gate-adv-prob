@@ -1,0 +1,40 @@
+%
+\begin{definition}
+\label{Type 1 error}A type 1 error occurs if the null hypothesis $H_{0}$ is rejected even if it is true.
+\end{definition}
+\begin{definition}
+\label{Power of the test}The probability that the alternative hypothesis $H_{1}$ is true is defined to be Power of a given test. 
+\end{definition}
+Given,
+\begin{equation}
+f_{X}(x)=
+\begin{cases}
+\frac{1}{\lambda}e^{\brak{-\frac{x}{\lambda}}}, & x>0\\
+0, & x\leq 0
+\end{cases}
+\end{equation}
+Let cumulative distribution function be $F_{X}(x)$ for a given $\lambda$.
+Hence,
+\begin{equation}
+    F_{X}(x)=\int_{-\infty}^{x}f_{X}(a) da
+\end{equation}
+From the probability density function,
+\begin{align}
+    \implies F_X(4.5)&=\int_{-\infty}^{x}f_{X}(a) da\\
+    &=\int_{0}^{4.5}\frac{1}{\lambda}e^{\brak{-\frac{a}{\lambda}}}da\\
+    &=1-e^{-\frac{4.5}{\lambda}}
+\end{align}
+We need the probability for $X\geq 4.5$,hence required probability is,
+\begin{align}
+1-F_{X}(4.5)=e^{-\frac{4.5}{\lambda}}\label{eq:2.0.6}
+\end{align}
+From \eqref{eq:2.0.6} we get probability that the given null hypothesis$(H_{0})$ is true is,
+\begin{align}
+e^{-\frac{4.5}{3}}=0.2231.
+\end{align}
+$\therefore$ The \textbf{probability of type 1 error is 0.2231}.
+From \eqref{eq:2.0.6},we get the required probability that the given alternative hypothesis($H_{1}$) is true is,
+\begin{align}
+e^{-\frac{4.5}{5}}=0.4066
+\end{align}
+$\therefore$ The \textbf{power of the test is 0.4066}

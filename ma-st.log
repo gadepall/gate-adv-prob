@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.2.13)  28 MAR 2021 14:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.2.13)  3 APR 2021 14:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1964,6 +1964,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--4
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9])
+(./solutions/st/2019/45.tex
+Overfull \hbox (23.38623pt too wide) detected at line 5
+ []$[] \OT1/txr/m/n/12 = [] (0\OML/txmi/m/it/12 :\OT1/txr/m/n/12 6)[](0\OML/txm
+i/m/it/12 :\OT1/txr/m/n/12 2)[](0\OML/txmi/m/it/12 :\OT1/txr/m/n/12 2)[]  $ 
+ []
+
+
+Overfull \hbox (10.6022pt too wide) detected at line 8
+[][] [] [] \OT1/txr/m/n/12 = [][](0\OML/txmi/m/it/12 :\OT1/txr/m/n/12 6)[](0\OM
+L/txmi/m/it/12 :\OT1/txr/m/n/12 2)[](0\OML/txmi/m/it/12 :\OT1/txr/m/n/12 2)[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
 Underfull \hbox (badness 3989) in paragraph at lines 376--378
 []\OT1/txr/m/n/12 Let E and F be any two events with
  []
@@ -1973,15 +1989,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 376--378
 
  []
 
-(./solutions/ma/2010/1.tex
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+(./solutions/ma/2010/1.tex) (./solutions/ma/2001/18.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(./solutions/ma/2001/18.tex
+(./solutions/ma/2014/36.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10])
-(./solutions/ma/2014/36.tex
+ [11]
 Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
@@ -1991,37 +2010,468 @@ Overfull \hbox (5.66185pt too wide) in paragraph at lines 54--54
 [] 
  []
 
-) [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 408.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 408.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
+
+ []
+
+(./solutions/ma/2005/26.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 46.
+LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
+(Font)              scaled to size 13.29996pt on input line 46.
+LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
+(Font)              scaled to size 9.30992pt on input line 46.
+LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
+(Font)              scaled to size 6.64998pt on input line 46.
+)
+(./solutions/ma/2015/32.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13])
+(./solutions/ma/2018/53.tex
+Overfull \hbox (23.21275pt too wide) in paragraph at lines 23--23
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (53.88435pt too wide) detected at line 59
+ []$[]   [] [] \OT1/txr/m/n/14 = [] + [] + []$ 
+ []
+
+
+Overfull \hbox (1.38127pt too wide) in paragraph at lines 65--65
+[] 
+ []
+
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+[]\OT1/txr/m/n/14 0.1353 and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+[]\OT1/txr/m/n/14 0.2021 and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
+[]\OT1/txr/m/n/14 0.2231 and
+ []
+
+(./solutions/ma/2012/30.tex
+Underfull \hbox (badness 2401) in paragraph at lines 26--28
+\OT1/txr/m/n/14 We need the prob-a-bil-ity for $\OML/txmi/m/it/14 X \OMS/txsy/m
+/n/14 ^^U
+ []
+
+) (./solutions/ma/2017/50.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 456--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 462--463
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--473
+
+ []
+
+(./solutions/ma/1997/18.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
+(./solutions/ma/2012/29.tex [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+Overfull \hbox (4.29599pt too wide) in paragraph at lines 501--501
+[] 
+ []
+
+(./solutions/ma/2014/37.tex
+Overfull \hbox (1.50069pt too wide) in paragraph at lines 5--5
+[] 
+ []
+
+
+Overfull \hbox (52.41049pt too wide) in paragraph at lines 11--11
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--14
+\OT1/txr/m/n/14 First we will cal-cu-late the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--14
+[][] \OML/txmi/m/it/14 yf[]\OT1/txr/m/n/14 (\OML/txmi/m/it/14 x; y\OT1/txr/m/n/
+14 ) \OML/txmi/m/it/14 dx$\OT1/txr/m/n/14 , $[][] \OML/txmi/m/it/14 xf[]\OT1/tx
+r/m/n/14 (\OML/txmi/m/it/14 x; y\OT1/txr/m/n/14 ) \OML/txmi/m/it/14 dx$
+ []
+
+
+Overfull \hbox (13.76321pt too wide) in paragraph at lines 19--19
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+Overfull \hbox (29.41173pt too wide) in paragraph at lines 31--31
+[] 
+ []
+
+) (./solutions/st/2019/48.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18])
+(./solutions/ma/2018/24/main.tex
+<solutions/ma/2018/24/cdf_plot.png, id=587, 462.528pt x 346.896pt>
+File: solutions/ma/2018/24/cdf_plot.png Graphic file (type png)
+<use solutions/ma/2018/24/cdf_plot.png>
+Package pdftex.def Info: solutions/ma/2018/24/cdf_plot.png  used on input line 
+34.
+(pdftex.def)             Requested size: 252.0pt x 189.00427pt.
+) (./solutions/st/2021/14.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19 <./solutions/ma/2018/24/cdf_plot.png>]) (./solutions/st/2021/44.tex)
+(./solutions/ma/2016/47.tex
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20])
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
+
+ []
+
+(./solutions/ma/2015/27/latex4.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<solutions/ma/2015/27/Figure/fig4.png, id=650, 390.45876pt x 262.9825pt>
+File: solutions/ma/2015/27/Figure/fig4.png Graphic file (type png)
+<use solutions/ma/2015/27/Figure/fig4.png>
+Package pdftex.def Info: solutions/ma/2015/27/Figure/fig4.png  used on input li
+ne 31.
+(pdftex.def)             Requested size: 252.0pt x 169.72873pt.
+) [21 <./solutions/ma/2015/27/Figure/fig4.png>] (./solutions/ma/2001/24.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22])
+(./solutions/ma/2007/55.tex
+Overfull \hbox (27.10512pt too wide) in paragraph at lines 9--9
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23])
+(./solutions/st/2021/50/main.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+Underfull \hbox (badness 1436) in paragraph at lines 53--55
+\OT1/txr/m/n/14 Also $\OML/txmi/m/it/14 Y[]; :::; Y[]$ \OT1/txr/m/n/14 are iden
+-ti-cal ran-dom
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (62.88258pt too wide) detected at line 78
+ []$[] [] []$ []  
+ []
+
+
+Overfull \hbox (2.68628pt too wide) detected at line 91
+ []$[]   []\OT1/txr/m/n/14 (\OML/txmi/m/it/14 min\OT1/txr/m/n/14 (\OML/txmi/m/i
+t/14 Y[]; :::; Y[]; X[] \OT1/txr/m/n/14 + \OML/txmi/m/it/14 Y[]; X[] \OT1/txr/m
+/n/14 + \OML/txmi/m/it/14 X[] \OT1/txr/m/n/14 + \OML/txmi/m/it/14 Y[]\OT1/txr/m
+/n/14 )$ 
+ []
+
+
+Overfull \hbox (21.617pt too wide) detected at line 91
+ []$[] \OML/txmi/m/it/14 < X[] \OT1/txr/m/n/14 + \OML/txmi/m/it/14 X[] \OT1/txr
+/m/n/14 + \OML/txmi/m/it/14 X[]\OMS/txsy/m/n/14 j\OML/txmi/m/it/14 Y[]; :::; Y[
+]; X[] \OT1/txr/m/n/14 + \OML/txmi/m/it/14 Y[] > X[] \OT1/txr/m/n/14 + \OML/txm
+i/m/it/14 X[]\OT1/txr/m/n/14 )$ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+\OT1/txr/m/n/14 We can sim-plify and write
+ []
+
+
+Overfull \hbox (21.617pt too wide) detected at line 96
+ []$[] \OML/txmi/m/it/14 > X[] \OT1/txr/m/n/14 + \OML/txmi/m/it/14 X[] \OT1/txr
+/m/n/14 + \OML/txmi/m/it/14 X[]\OMS/txsy/m/n/14 j\OML/txmi/m/it/14 Y[]; :::; Y[
+]; X[] \OT1/txr/m/n/14 + \OML/txmi/m/it/14 Y[] > X[] \OT1/txr/m/n/14 + \OML/txm
+i/m/it/14 X[]\OT1/txr/m/n/14 )$ []  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+Overfull \hbox (20.22762pt too wide) in paragraph at lines 105--105
+[] 
+ []
+
+) (./solutions/st/2021/48.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (43.89824pt too wide) in paragraph at lines 22--22
+[] 
+ []
+
+
+Overfull \hbox (7.50458pt too wide) in paragraph at lines 26--26
+[] 
+ []
+
+
+Overfull \hbox (41.73288pt too wide) detected at line 30
+ []$[]   \OT1/txr/m/n/14 = [] [] [] \OMS/txsy/m/n/14 ^^A [] [] [] [] []$ 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26])
+(./solutions/st/2020/16/Assignment5.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<solutions/st/2020/16/figs/Assignment5.png, id=822, 433.62pt x 289.08pt>
+File: solutions/st/2020/16/figs/Assignment5.png Graphic file (type png)
+<use solutions/st/2020/16/figs/Assignment5.png>
+Package pdftex.def Info: solutions/st/2020/16/figs/Assignment5.png  used on inp
+ut line 38.
+(pdftex.def)             Requested size: 252.0pt x 168.00174pt.
+)
+(./solutions/ma/2018/25.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+[]\OT1/txr/m/n/14 A se-quence of ran-dom vari-ables
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27 <./solutions/st/2020/16/figs/Assignment5.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (3.61304pt too wide) detected at line 60
+ []$[] [] [][] \OMS/txsy/m/n/14 ^^B [] ^^B [] [][] [][]$ []  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (1.87228pt too wide) in paragraph at lines 91--91
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29])
+(./solutions/me/2021/20.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+(./solutions/st/2021/22.tex
+Overfull \hbox (10.59872pt too wide) in paragraph at lines 44--44
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 697--698
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+(./solutions/ma/1999/1.28.tex) (./solutions/ma/1996/25.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+Overfull \hbox (19.47726pt too wide) in paragraph at lines 74--74
+[] 
+ []
+
+) [33
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 716.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 716.
  (./ma-st.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 408.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 408.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 716.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 716.
 Package rerunfilecheck Info: File `ma-st.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 408.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 716.
  ) 
 Here is how much of TeX's memory you used:
- 51303 strings out of 481239
- 1277528 string characters out of 5920377
- 1766061 words of memory out of 5000000
- 65284 multiletter control sequences out of 15000+600000
- 600407 words of font info for 162 fonts, out of 8000000 for 9000
+ 51999 strings out of 481239
+ 1287572 string characters out of 5920377
+ 1768448 words of memory out of 5000000
+ 65438 multiletter control sequences out of 15000+600000
+ 622397 words of font info for 215 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,16n,98p,722b,975s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,18n,98p,722b,1006s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txf
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/times/utmri8a.pfb>
-Output written on ma-st.pdf (11 pages, 157774 bytes).
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
+b>
+Output written on ma-st.pdf (33 pages, 285201 bytes).
 PDF statistics:
- 482 PDF objects out of 1000 (max. 8388607)
- 429 compressed objects within 5 object streams
- 264 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1187 PDF objects out of 1200 (max. 8388607)
+ 1079 compressed objects within 11 object streams
+ 707 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

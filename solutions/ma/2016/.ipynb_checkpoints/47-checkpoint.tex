@@ -1,0 +1,79 @@
+
+We know that,
+\begin{align}
+    f_{X_1}(x) = 
+    \begin{cases}
+    0   & x < 0\\
+    \lambda e^{\lambda x} & 0\le x < \infty\\
+    \end{cases}
+\end{align}
+Given, 
+\begin{align}
+   E(X_1)=\cfrac{1}{\lambda}&=1\\ 
+   \implies \lambda &=1
+\end{align}
+Therefore,
+\begin{align}
+    f_{X_1}(x) = 
+    \begin{cases}
+    0   & x < 0\\
+    e^{-x} & 0\le x < \infty\\
+    \end{cases}
+\end{align}
+We know that,
+\begin{align}
+    f_{X_2}(x) = 
+    \begin{cases}
+    0   & x < 0\\
+    \cfrac{x^{\alpha-1}e^{\brak{\frac{-x}{\beta}}}}{\beta^{\alpha}\Gamma(\alpha)} & 0\le x < \infty\\
+    \end{cases}
+\end{align}
+Given, 
+\begin{equation}\label{ma2016-47:eq:2.0.4}
+    E(X_2)=\alpha \beta =2 
+\end{equation}
+\begin{equation}\label{ma2016-47:eq:2.0.5}
+    V(X_2)=\alpha \beta^{2}=2 
+\end{equation}
+Solving \ref{ma2016-47:eq:2.0.4} and \ref{ma2016-47:eq:2.0.5}, we get,
+$\alpha=2$, $\beta=1$ and $\Gamma(2)=1$\\
+Therefore,
+\begin{align}
+    f_{X_2}(x) = 
+    \begin{cases}
+    0   & x < 0\\
+    xe^{-x} & 0\le x < \infty\\
+    \end{cases}
+\end{align}
+Calculating the CDF of $f_{X_2}(x)$,\\
+\begin{align}
+    F_{X_2}(x)&= \displaystyle\int\limits_0^x f_{X_2}(x)\\
+    F_{X_2}(x)&=
+    \begin{cases}
+    0 & x<0\\
+    \cfrac{\gamma(\alpha,\frac{x}{\beta})}{\Gamma(\alpha)} & 0 \le x <\infty
+    \end{cases}
+\end{align}
+For $\alpha=2$ and $\beta=1$\\
+Alternately, we have CDF of $X_1$ and $X_2$ given by 
+\begin{align}
+    F_{X_1}(x) = 
+    \begin{cases}
+     0   & x < 0\\
+    1-e^{-x} & 0\le x < \infty\\
+    \end{cases}
+\end{align}
+\begin{align}
+    F_{X_2}(x) = 
+    \begin{cases}
+    0   & x < 0\\
+    \cfrac{\gamma(2,x)}{\Gamma(2)} & 0\le x < \infty\\
+    \end{cases}
+\end{align}
+Thus, 
+\begin{align}
+    \pr{X_1\le X_2}&=\displaystyle\int\limits_{-\infty}^{\infty} F_{X_1}(x)f_{X_2}(x)dx\\
+                &= \displaystyle\int\limits_0^\infty(1-e^{-x})(xe^{-x})dx\\
+                &= \cfrac{3}{4}\\
+                &= 0.75
+\end{align}

@@ -1,0 +1,265 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[ #1 ]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 6}
+\author{Dishank Jain - AI20BTECH11011}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/Dishank422/AI1103-Probability-and-random-variables/blob/main/Assignment_6/codes
+\end{lstlisting}
+%
+and latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/Dishank422/AI1103-Probability-and-random-variables/blob/main/Assignment_6/main.tex
+\end{lstlisting}
+\section{Problem}
+(Gate 2021 ST Q. 50) Consider an amusement park where visitors are arriving according to a Poisson process with rate 1. Upon arrival, a visitor spends a random amount of time in the park and then departs. The time spent by the visitors is independent of one another, as well as of the arrival process and have common probability density function 
+\begin{align}
+    f(x) = 
+    \begin{cases}
+        e^{-x}, & x > 0\\
+        0,      & otherwise
+    \end{cases}
+\end{align}
+If at a given point, there are 10 visitors in the park, and p is the probability that there will be exactly two more arrivals before the next departure, then $\frac{1}{p}$ equals.....
+
+\section{Solution}
+According to the question, we want the following events to occur in order: 
+\begin{enumerate}
+    \item First visitor, $P_1$ arrives while no one leaves
+    \item Second visitor $P_2$ arrives while no one leaves
+    \item One or more person leaves before the third visitor $P_3$ arrives
+\end{enumerate}
+
+Let the above events be $E_1$, $E_2$ and $E_3$ respectively. Thus the required probability
+\begin{align}
+    &= \pr{E_1E_2E_3}\\
+    &= \pr{E_1}\pr{E_2|E_1}\pr{E_3|E_1E_2}\label{Requiredprobability}
+\end{align}
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    Symbol  & Representation  \\
+    \hline
+    $X_1$            & Arrival time of $P_1$  \\
+    $X_1+X_2$        & Arrival time of $P_2$  \\
+    $X_1+X_2+X_3$    & Arrival time of $P_3$  \\
+    \hline
+    $Y_1,...,Y_{10}$ & Departure times of the  \\
+                     & 10 people in park currently\\
+    \hline
+    $X_1+Y_{11}$     & Departure time of $P_1$\\
+    $X_1+X_2+Y_{12}$ & Departure time of $P_2$\\
+    \hline
+    \end{tabular}
+    \caption{Notations}
+    \label{tab:my_label}
+\end{table}
+
+First we present the following result which shall be useful later. For $n>0$,
+\begin{align}
+    \int_0^{\infty} xe^{-nx}dx = \cfrac{1}{n^2}\label{integrationresult}
+\end{align}
+
+The above can be derived using integration by parts as follows
+\begin{align}
+    \int_0^{\infty} xe^{-nx} dx &= -\cfrac{xe^{-nx}}{n} \biggr \vert_0^{\infty} 
+                                   + \cfrac{1}{n} \int_0^{\infty}e^{-nx}dx\\
+                                &= -\cfrac{e^{-nx}}{n^2}\biggr \vert_0^{\infty}\\
+                                &= \cfrac{1}{n^2}
+\end{align}
+
+Next we note that $X_1$, $X_2$ and $X_3$ are identical random variables having Poisson distribution with rate 1. Thus for $i \in \{1,2,3\}$,
+\begin{align}
+    \lambda &= 1*X_i = X_i\\
+    k &= 1\\
+    \implies f_{X_i}(x) &= 
+    \begin{cases}
+        \cfrac{x^1e^{-x}}{1!} = x e^{-x} &x > 0\\
+        0                                &otherwise
+    \end{cases}
+\end{align}
+
+Also $Y_1,...,Y_{12}$ are identical random variables. Thus for $i \in \{1,...,12\}$, as given in question,
+\begin{align}
+    f_{Y_i}(x) &= 
+    \begin{cases}
+        e^{-x} & x > 0\\
+        0      & otherwise
+    \end{cases}\\
+    \implies F_{Y_i}(x) &= 
+    \begin{cases}
+        1-e^{-x} & x > 0\\
+        0        & otherwise
+    \end{cases}
+\end{align}
+
+Now we find $\pr{E_1}$, $\pr{E_2|E_1}$ and $\pr{E_3|E_1E_2}$ in order to find the required probability from eq \eqref{Requiredprobability}.
+\begin{align}
+    \pr{E_1} &= \pr{Y_1,...,Y_{10} > X_1}\\
+             &= \int_{-\infty}^{\infty} \pr{Y_1,...,Y_{10} > x|X_1 = x}\\
+             &= \int_{-\infty}^{\infty} (1-F_{Y_1}(x))^{10} f_{X_1}(x)dx\\
+             &= \int_0^{\infty} xe^{-11x} dx\\
+             &= \cfrac{1}{121}
+\end{align}
+\begin{multline}
+    \pr{E_2|E_1} =\\
+    \pr{Y_1,...,Y_{10},X_1+Y_{11} > X_1 + X_2|Y_1,...,Y_{10} > X_1}
+\end{multline}
+Using memoryless property of exponential random variable,
+\begin{align}
+    \pr{E_2|E_1} &= \pr{Y_1,...,Y_{11} > X_2}\\
+                 &= \int_{-\infty}^{\infty} \pr{Y_1,...Y_{11} > x|X_2 = x}\\
+                 &= \int_{-\infty}^{\infty} (1-F_{Y_1}(x))^{11} f_{X_2}(x)dx\\
+                 &= \int_{0}^{\infty} x e^{-12x} dx\\
+                 &= \cfrac{1}{144}
+\end{align}
+
+$\pr{E_3|E_1E_2} = $  
+\begin{multline}
+    \pr{min(Y_1,...,Y_{10},X_1+Y_{11},X_1+X_2+Y_{12}) \\
+    < X_1+X_2+X_3| Y_1,...,Y_{10},X_1+Y_{11} > X_1+X_2})
+\end{multline}
+
+We can simplify and write $\pr{E_3|E_1E_2} = $
+\begin{multline}
+    1 - \pr{Y_1,...,Y_{10},X_1+Y_{11},X_1+X_2+Y_{12} \\
+    > X_1+X_2+X_3| Y_1,...,Y_{10},X_1+Y_{11} > X_1+X_2})
+\end{multline}
+
+Using memoryless property of exponential random variable,
+\begin{align}
+    \pr{E_3|E_1E_2} &= 1 - \pr{Y_1,...,Y_{12} > X_3}\\
+                    &= 1 - \int_{-\infty}^{\infty} \pr{Y_1,...Y_{12} > x|X_3 = x}\\
+                    &= 1 - \int_{-\infty}^{\infty} (1-F_{Y_1}(x))^{12} f_{X_3}(x)dx\\
+                    &= 1 - \int_{0}^{\infty} x e^{-13x} dx\\
+                    &= 1 - \cfrac{1}{169}\\
+                    &= \cfrac{168}{169}
+\end{align}
+
+Thus on substituting values in \eqref{Requiredprobability}, 
+\begin{align}
+    \pr{E_1E_2E_3} &= \cfrac{1}{121}\times \cfrac{1}{144}\times \cfrac{168}{169}\\
+                   &= 5.7 \times 10^{-5}
+\end{align}
+\end{document}

@@ -1,0 +1,65 @@
+%
+Let $X \in \{ 0, 1, 2, 3, 4\}$ be the random variable representing the number of heads obtained by Person 1 in 4 tosses. Similarly, Let $Y \in \{ 0, 1, 2, 3, 4\}$ be the random variable representing the number of heads obtained by Person 2 in 4 tosses. Then $X \text{ and } Y$ are binomial distributions with parameter:
+\begin{align}
+    p = \frac{1}{2}
+\end{align}
+Then,
+\begin{align}
+    \Pr(X=i) = 
+	\begin{cases}
+	\comb{4}{k}(p)^k(1-p)^{4-k} &  i \in \{0, 1, 2, 3, 4\}\\ 
+	0 & \text{otherwise}
+	\end{cases}
+	\\\Pr(X=i) = 
+	\begin{cases}
+	\comb{4}{k}(\frac{1}{2})^k(1-\frac{1}{2})^{4-k}  &  i \in \{0, 1, 2, 3, 4\}\\ 
+	0 & \text{otherwise}
+	\end{cases}
+	\\\Pr(X=i) = 
+	\begin{cases}
+	\comb{4}{k}\times(\frac{1}{2})^4  &  i \in \{0, 1, 2, 3, 4\}\\ 
+	0 & \text{otherwise}
+	\end{cases}
+\end{align}
+\begin{center}
+\begin{table}[h]
+    \centering
+    \resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|c|c|}
+\hline
+Serial number & Case & Probability of the case \\
+\hline
+1 & $\Pr(X=0)$ & $\frac{\comb{4}{0}}{16} = \frac{1}{16}$ \\ 
+\hline
+2 & $\Pr(X=1)$ & $\frac{\comb{4}{1}}{16} = \frac{4}{16}$ \\ 
+\hline
+3 & $\Pr(X=2)$ & $\frac{\comb{4}{2}}{16} = \frac{6}{16}$ \\
+\hline
+4 & $\Pr(X=3)$ & $\frac{\comb{4}{3}}{16} = \frac{4}{16}$ \\
+\hline
+5 & $\Pr(X=4)$ & $\frac{\comb{4}{4}}{16} = \frac{1}{16}$ \\
+\hline
+\end{tabular}
+}
+    \caption{Probability distribution table of X}
+    \label{table 1}
+\end{table}
+\end{center}
+Similar is the distribution of $Y$. For finding $\Pr{(X=Y)}$, let $Y=y$,
+\begin{align}
+    \Pr{(X=Y)} = \frac{\comb{4}{y}}{16} \times \Pr{(Y=y)}
+\end{align}
+Generalizing this result,
+\begin{align}
+    \Pr{(X=Y)} &= \sum_{y=0}^4  \frac{\comb{4}{y}}{16}\times \Pr{(Y=y)}
+    \\ &= \sum_{y=0}^4 \frac{\comb{4}{y}}{16} \times \frac{\comb{4}{y}}{16}
+\end{align}
+\begin{multline}
+    \Pr{(X=Y)} = \brak{\frac{1}{16}\times\frac{1}{16}} + \brak{\frac{4}{16}\times\frac{4}{16}} +\brak{\frac{6}{16}\times\frac{6}{16}} \\+\brak{\frac{4}{16}\times\frac{4}{16}} +\brak{\frac{1}{16}\times\frac{1}{16}} 
+\end{multline}
+\begin{align}
+    \Pr{(X=Y)} &= \frac{1}{256} + \frac{16}{256} +\frac{36}{256} +\frac{16}{256} +\frac{1}{256} 
+    \\&= \frac{70}{256} 
+    \\&= \frac{35}{128} 
+    \\&= 0.2734375
+\end{align}

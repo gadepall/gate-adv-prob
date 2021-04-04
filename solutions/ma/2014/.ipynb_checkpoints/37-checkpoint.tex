@@ -1,0 +1,48 @@
+Let $g(X,Y)=X+Y$
+We know that,
+\begin{align*}
+    &E[g(X,Y)]=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}g(x,y)f_{X,Y}(x,y)dxdy\\
+\end{align*}
+Then,
+\begin{align*}
+    &E[X+Y]=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}(x+y)f_{X,Y}(x,y)\,dxdy\\
+    &=\int_{0}^{+\infty}\int_{0}^{+\infty}(x+y)f_{X,Y}(x,y)\,dxdy\\
+    &=\int_{0}^{+\infty}\left(\int_{0}^{+\infty}xf_{X,Y}(x,y)\,dx+\int_{0}^{+\infty}yf_{X,Y}(x,y)\,dx\right)\,dy
+\end{align*}
+First we will calculate the $\int_{0}^{+\infty}yf_{X,Y}(x,y)\,dx$,  $\int_{0}^{+\infty}xf_{X,Y}(x,y)\,dx$ seperately.\\
+consider,
+\begin{align*}
+    &\int_{0}^{+\infty}yf_{X,Y}(x,y)\,dx\\
+    &=\int_{0}^{y}ye^{-y}(1-e^{-x})\,dx+\int_{y}^{+\infty}ye^{-x}(1-e^{-y})\,dx\\
+    &=(ye^{-y})(y+e^{-y}-1)+y(1-e^{-y})e^{-y}\\
+    &=y^2e^{-y}
+\end{align*}
+So,
+\begin{align}
+    \tag{37.1}
+    \int_{0}^{+\infty}yf_{X,Y}(x,y)\,dx=y^2e^{-y}
+\end{align}
+Now consider,
+\begin{align*}
+  &\int_{0}^{+\infty}xf_{X,Y}(x,y)\,dx\\
+  &=\int_{0}^{y}xe^{-y}(1-e^{-x})\,dx+\int_{y}^{+\infty}xe^{-x}(1-e^{-y})\\
+  &=e^{-y}\left(\frac{y^2}{2}+e^{-y}(y+1)-1\right)+(1-e^{-y})(e^{-y}(y+1))\\
+  &=\frac{y^2e^{-y}}{2}+ye^{-y}
+\end{align*}
+So,
+\begin{align}
+    \tag{37.2}
+    \int_{0}^{+\infty}xf_{X,Y}(x,y)\,dx=\frac{y^2e^{-y}}{2}+ye^{-y}
+\end{align}
+From Eq 37.1 and 37.2
+\begin{align*}
+    &E[X+Y]=\int_{0}^{+\infty}\left(\frac{y^2e^{-y}}{2}+ye^{-y}+y^2e^{-y}\right)\,dy\\
+    &=\int_{0}^{+\infty}\left(\frac{3}{2}y^2e^{-y}+ye^{-y}\right)\,dy\\
+    &=\left(-\frac{3}{2}(y^2+2y+2)e^{-y}+(-e^{-y}(y+1))\right)\Biggr|_{0}^{+\infty}\\
+    &=\frac{3}{2}\times2+1\\
+    &=4
+\end{align*}
+So,
+\begin{align*}
+  &E[X+Y]=4
+\end{align*}

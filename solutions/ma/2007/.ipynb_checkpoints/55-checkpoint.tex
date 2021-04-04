@@ -1,0 +1,25 @@
+
+\begin{align}
+   &p_{X_i} (n)=\pr{X_i = n}=\nonumber \begin{cases}
+            \frac{1}{2}, &\text{if n= 1 or n=-1}\\
+             0, &\text{otherwise}\\
+            \end{cases} \\ 
+    \implies& \mu=E(X_i)=1/2(1-1)=0\\
+    \implies& \sigma^2=E({X_i}^2) -\mu^2=\frac{1}{2}(1+1) -0=1
+\end{align}
+Using Central Limit Theorem,we can say that for a series of random and identical variables \(X_i\) with the \(\text{Mean} =\mu \text{ and variance}=\sigma^2  \)  where i \(\in\) {1,2...n} 
+\begin{align}
+&\text{Let }\overline{X_n} \equiv \frac{\sum_{i=1}^n X_i}{n}\\
+&\text{Then} \lim_{n\to\infty}\sqrt{n}(\overline{X_n}-\mu)=N(0,\sigma^2)\\
+&\implies\lim_{n\to\infty}\frac{S_n}{n}=N(0,1)\\
+&\implies S_n=n N(0,1)\\
+&\implies\lim_{n\to\infty}\pr{n N(0,1) >\frac{n}{10}}\\
+&\implies\lim_{n\to\infty} \pr{N(0,1)>\frac{1}{10}}= Q(0.1)\\ \nonumber
+&\text{Now using \eqref{qneq}}\\ 
+&\implies Q(0.1)+(1-Q(-0.1))+ 0.08=1\\ \nonumber
+&\text{Now as }N(0,1) \text{symmetric about 0}\\
+&\implies 2\times Q(0.1)+0.08=1\\
+&\implies Q(0.1)=0.46\\
+&\implies \lim_{n\to\infty} \pr{S_n >\frac{n}{10}}=0.46 
+\end{align}
+Hence final solution is option 2) or 0.46

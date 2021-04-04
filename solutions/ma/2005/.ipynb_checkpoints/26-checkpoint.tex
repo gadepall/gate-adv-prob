@@ -1,0 +1,46 @@
+Let X and Y be exponential random variables which represent the lifetime of bulbs X and Y respectively, both with mean = 100.\\
+Using memorylessness property for exponential distribution, which states that :\\
+\emph{An exponentially distributed random variable T obeys the relation}
+\begin{align}
+  \pr{T>t+s |T>s} = \pr{T>t}
+\end{align} 
+\emph{where $s,t\geq 0$}\\
+Proof : Using Complementary cumulative distributive function, we get
+\begin{align}
+   \pr{T>t+s |T>s} =& \frac{\pr{T>t+s , T>s}}{\pr{T>s}} \\
+   =& \frac{\pr{T>t+s}}{\pr{T>s}} \\
+   =& \frac{e^{-\lambda(t+s)}}{e^{-\lambda s}}\\
+   =&  e^{-\lambda t}\\
+   =& \pr{T>t}
+\end{align}
+Probability that bulb X fails before bulb Y given that bulb Y was functioning when bulb X was switched on 
+\begin{align}
+  \pr{Y>X+15 | Y \geq 15}
+  =& \pr{Y>X}
+\end{align}
+For both X and Y,
+\begin{equation}
+\lambda= \frac{1}{100} = 0.01
+\end{equation}
+\\
+Probability distribution function of exponential random variables is given by : 
+For x,y $\geq$ 0
+\begin{align}
+    \texorpdfstring{f\textsubscript{X}}{f X}(x) = \lambda e^{-\lambda x}\\
+    \texorpdfstring{f\textsubscript{Y}}{f Y}(y) = \lambda e^{-\lambda y}
+\end{align}
+Cumulative distribution function of exponential random variables is given by : 
+For x $\geq$ 0
+\begin{align}
+    \texorpdfstring{F\textsubscript{X}}{F X}(x) = 1- e^{-\lambda x}\\
+    \texorpdfstring{F\textsubscript{Y}}{F Y}(x) = 1- e^{-\lambda x}
+\end{align}
+\begin{align}
+    \pr{Y>X} =& \int_{-\infty}^{\infty}  \texorpdfstring{F\textsubscript{Y}}{F Y}(x) \texorpdfstring{f\textsubscript{X}}{f X}(x)  dx\\
+    =& \int_{0}^{\infty} ( 1- e^{-\lambda x}) \lambda e^{-\lambda x}\\
+    =&  \lambda \brak{\frac{1}{2\lambda} e^{-2\lambda x} - \frac{1}{\lambda} e^{-\lambda x}} \Bigg|_0^\infty\\
+     =& \brak{\frac{1}{2} e^{-2\lambda x} - e^{-\lambda x}} \Bigg|_0^\infty\\
+    =& \brak{\frac{1}{2} e^{-0.02x} - e^{-0.01x}} \Bigg|_0^\infty\\
+    =& \frac{1}{2} = 0.5
+\end{align}
+ $\therefore$The answer is option (b) \large $\frac{1}{2}$.

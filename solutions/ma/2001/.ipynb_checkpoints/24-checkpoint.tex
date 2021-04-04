@@ -1,0 +1,122 @@
+
+Given,
+\begin{align} \label{ma2001-24:eq-1}
+    E(X)=E(Y)=3
+\end{align}
+\begin{align}
+    Var(X)=Var(Y)=1
+\end{align}
+\begin{align}
+    Cov(X,Y)=1/2
+\end{align}
+Now,
+\begin{align}
+    Var(X)=E(X^2)-(E(X))^2
+\end{align}
+Substituting given values, we get,
+\begin{align}
+    1=E(X^2)-3^2
+\end{align}
+So,
+\begin{align} \label{ma2001-24:eq-2}
+    E(X^2)=10
+\end{align}
+Similarly for $Y$,
+\begin{align} \label{ma2001-24:eq-3}
+    E(Y^2)=10
+\end{align}
+Also,
+\begin{align}
+    Cov(X,Y)=E(XY)-E(X)E(Y)
+\end{align}
+Substituting given values, we get,
+\begin{align}
+    1/2=E(XY)-(3)(3)
+\end{align}
+So,
+\begin{align} \label{ma2001-24:eq-4}
+    E(XY)=19/2
+\end{align}
+Let $Z$ be a random variable defined as
+\begin{align} \label{ma2001-24:eq-5}
+    Z=X-Y
+\end{align}
+Then using \eqref{ma2001-24:eq-1},
+\begin{align} \label{ma2001-24:eq-6}
+    E(Z)=E(X-Y)=E(X)-E(Y)=0
+\end{align}
+Now, using \eqref{ma2001-24:eq-6}
+\begin{align}
+    Var(Z)=E(Z^2)-(E(Z))^2=E(Z^2)
+\end{align}
+\begin{align}
+    Var(Z)=E((X-Y)^2)
+\end{align}
+\begin{align}
+    Var(Z)=E(X^2)+E(Y^2)-2E(XY)
+\end{align}
+Using \eqref{ma2001-24:eq-2}, \eqref{ma2001-24:eq-3} and \eqref{ma2001-24:eq-4},
+\begin{align}
+    Var(Z)=10+10-2 \times 19/2
+\end{align}
+\begin{align} \label{ma2001-24:eq-7}
+    Var(Z)=1
+\end{align}
+\begin{theorem}
+(Chebychev's Inequality)\ Let T be an arbitrary random variable, with finite mean E(T), then for all $a>0$,
+\begin{align}
+    \pr{|T-E(T)| \geq a} \leq \dfrac{Var(T)}{a^2}
+\end{align}
+\end{theorem}
+\begin{proof}
+Let $A$ be a non-negative random variable and $a>0$ be any real number. Define a new random variable $B$ by
+\begin{align}
+B=  \begin{cases} 
+          a & A \geq a \\
+          0 & A < a
+    \end{cases}
+\end{align}
+Then clearly $B \leq A$ and by monotonicity,
+\begin{align} \label{ma2001-24:eq-8}
+    E(B) \leq E(A)
+\end{align}
+\begin{align}
+    E(B)=a\pr{B=a}+0\pr{B=0}
+\end{align}
+\begin{align} \label{ma2001-24:eq-9}
+    E(B)=a\pr{A \geq a}
+\end{align}
+By \eqref{ma2001-24:eq-8} and \eqref{ma2001-24:eq-9},
+\begin{align}
+    a\pr{A \geq a} \leq  E(A)
+\end{align}
+\begin{align} \label{ma2001-24:eq-10}
+    \pr{A \geq a} \leq \dfrac{E(A)}{a}
+\end{align}
+Set $A=(T-E(T))^2$. Then,
+\begin{align}
+    \pr{|T-E(T)| \geq a}=\pr{A \geq a^2}
+\end{align}
+Using \eqref{ma2001-24:eq-10},
+\begin{align}
+    \pr{|T-E(T)| \geq a} \leq \dfrac{E(A)}{a^2}
+\end{align}
+\begin{align}
+    \pr{|T-E(T)| \geq a} \leq \dfrac{E(T-E(T))^2}{a^2}
+\end{align}
+\begin{align}
+    \pr{|T-E(T)| \geq a} \leq \dfrac{Var(T)}{a^2}
+\end{align}
+\end{proof}
+Applying Chebychev's Inequality for $Z$ with $a=6$, we get,
+\begin{align}
+    \pr{|Z-E(Z)| \geq 6} \leq \dfrac{Var(Z)}{6^2}
+\end{align}
+Using \eqref{ma2001-24:eq-6} and \eqref{ma2001-24:eq-7},
+\begin{align}
+    \pr{|Z-0| \geq 6} \leq \dfrac{1}{36}
+\end{align}
+As $Z=X-Y$,
+\begin{align}
+    \pr{|X-Y| \geq 6} \leq \dfrac{1}{36}
+\end{align}

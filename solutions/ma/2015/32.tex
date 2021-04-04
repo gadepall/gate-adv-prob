@@ -1,0 +1,51 @@
+
+Given,
+\begin{align}
+\tag{32.1}
+    Pr(X_{1}=1)=\dfrac{1}{4},Pr(X_{2}=2)=\dfrac{3}{4}
+\end{align}
+As $X_{1},X_{2},\dots$, are identically distributed random variables, $\forall i \in \{1,2,\dots,n\}$
+\begin{align}
+\tag{32.2}
+    Pr(X_{i}=1)=\dfrac{1}{4},Pr(X_{i}=2)=\dfrac{3}{4}
+\end{align}
+Also,
+\begin{align}
+\tag{32.3}
+    \because P(X_{i}&=1)+P(X_{i}=2)=1\\
+\tag{32.4}
+    &\therefore X_{i} \in \{1,2\}
+\end{align}
+Therefore, each $X_{i}$ is a bernoulli distribution with
+\begin{align}
+\tag{32.5}
+    p=\dfrac{3}{4},q=\dfrac{1}{4}
+\end{align}
+Let
+\begin{align}
+\tag{32.6}
+    X=\displaystyle\sum_{i=1}^{n}X_{i}
+\end{align}
+be a binomial distribution. Its CDF is
+\begin{align}
+\tag{32.7}
+    Pr(X\leq n+r)=\displaystyle\sum_{k=0}^{r}{\comb{n}{k}}p^{k}q^{n-k}
+\end{align}
+To find : $\displaystyle\lim_{n\to\infty}Pr(\bar X_{n} \leq a)$
+\begin{align}
+\tag{32.8}
+    \bar X_{n} \leq a \Rightarrow X \leq na
+\end{align}
+Substituting $a(=1.8),p,q$, we get
+\begin{align}
+\tag{32.9}
+    \displaystyle\lim_{n\to\infty}Pr(\bar X_{n} \leq 1.8)&=\displaystyle\lim_{n\to\infty}P(X\leq 1.8n)\\
+\tag{32.10} 
+    &=\displaystyle\sum_{k=0}^{0.8n}\dfrac{{\comb{n}{k}}3^{k}}{4^{n}}
+\label{eq:val}
+\end{align}
+On solving \eqref{eq:val}, we get
+\begin{align}
+\tag{32.11}
+    \displaystyle\lim_{n\to\infty}P(\bar X_{n} \leq 1.8)=1
+\end{align}

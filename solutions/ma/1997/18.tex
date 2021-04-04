@@ -1,0 +1,33 @@
+
+Given A and B are two events,\\
+We know that,
+\begin{align}
+    A&=A(B+\bar{B})\\
+    &=AB+A\bar{B}
+\end{align}
+Since $AB$ and $A\bar{B}$ are disjoint events,
+\begin{align}
+    \Pr{(A)}=\Pr{(AB)}+\Pr{(A\bar{B})}
+\end{align}
+Hence,
+\begin{equation}
+    \Pr(A\bar{B})=\Pr{(A)}-\Pr{(AB)}\label{ma1997-18:eq:2.0.4}
+\end{equation}
+Since $B$ and $\bar{B}$ are disjoint events,
+\begin{align}
+    \Pr{(B)}+\Pr{(\bar{B})}=1\\
+    \Pr{(\bar{B})}=1-\Pr{(B)}\label{ma1997-18:eq:2.0.6}
+\end{align}
+We know that,
+\begin{equation}
+\Pr{(A|\bar{B})}=\frac{\Pr{(A\bar{B})}}{\Pr{(\bar{B})}} \label{ma1997-18:eq:2.0.7}    
+\end{equation}
+From \eqref{ma1997-18:eq:2.0.6} and \eqref{ma1997-18:eq:2.0.4}
+\begin{align}
+    \frac{\Pr(A)-\Pr(AB)}{1-\Pr{(B)}}=\frac{\Pr{(A\bar{B})}}{\Pr{(\bar{B})}}
+\end{align}
+From \eqref{ma1997-18:eq:2.0.7}
+\begin{equation}
+    \frac{\Pr(A)-\Pr(AB)}{1-\Pr{(B)}}=\Pr{(A|\bar{B})}
+\end{equation}
+Hence \textbf{option A is correct}
