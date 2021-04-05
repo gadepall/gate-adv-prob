@@ -1,0 +1,36 @@
+From Laws of complimentary of Boolean algebra
+ \begin{align}
+     B + \bar{B} &= 1\\
+     \pr{B} + \pr{\bar{B}} &=1\\
+    1 -\pr{B} &=\pr{\bar{B}} \label{ma1997-1.18:0.0.3}
+\end{align}
+And also as
+\begin{align}
+    A -AB &= A(1-B)\\
+   A-AB &=A(\bar{B}) \\
+    \pr{A} - \pr{AB} &=\pr{A\bar{B}} \label{ma1997-1.18:0.0.6}
+\end{align}
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{ |p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|p{1cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Truth table}\\[0.5ex]                     
+ \hline
+ \hline
+  A &  B & AB & ${\bar{B}}$ & A-AB & A${\bar{B}}$ \\[0.5ex] 
+ \hline
+ 1 & 1 & 1 & 0 & 0 & 0\\
+ 1 & 0 & 0 & 1 & 1 & 1\\
+ 0 & 1 & 0 & 0 & 0 & 0\\
+ 0 & 0 & 0 & 1 & 0 & 0\\
+ \hline
+\end{tabular}
+\end{table}
+\\
+ Using the above equations \eqref{ma1997-1.18:0.0.3}and \eqref{ma1997-1.18:0.0.6}
+ \begin{align}
+     \dfrac{\pr{A}-\pr{A B}}{1-\pr{B}} &= \dfrac{\pr{A\bar{B}}}{\pr{\bar{B}}} \\
+     &=\pr{A|\bar{B}}
+ \end{align}
+ Hence, option (1) is correct. 

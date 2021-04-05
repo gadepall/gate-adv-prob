@@ -1,0 +1,43 @@
+Given, $X\sim \mathcal P(\lambda)$ and $Y \sim \mathcal P(\mu)$.
+The probability mass functions (PMFs) of random variables X and Y are given by:
+\begin{align}
+  p_X(x) = 
+  \begin{cases}
+      \dfrac{e^{-\lambda}\lambda^{x}}{x!}, & \text{for } x=0,1,2,\dots\\
+    0, & \text{otherwise } 
+  \end{cases}
+\end{align}
+\begin{align}
+  p_Y(y) = 
+  \begin{cases}
+     \dfrac{e^{-\mu}\mu^{y}}{y!}, & \text{for } y=0,1,2,\dots\\
+    0, & \text{otherwise } 
+  \end{cases}
+\end{align}
+where: the parameters $\lambda = 1$ and $\mu = 2$.
+As X and Y are independent, we have for $k \geq 0$, the distribution function $p_{X+Y}(k)$ is a convolution of distribution functions $p_X(k)$ and $p_Y(k)$: 
+\begin{align}
+p_{X+Y}(k) &= \pr{X+ Y = k} = \pr{Y = k - X}\\
+&= \sum_{i}\pr{Y = k - i| X=i}\times p_X(i)
+\end{align}
+After unconditioning, as X and Y are independent: 
+\begin{align}
+\pr{Y = k - i| X=i} = \pr{Y = k - i} = p_Y(k-i)
+\end{align}
+\begin{align}
+p_{X+Y}(k) &= p_Y(k)*p_X(k)\\ 
+    &= \sum_{i=0}^k p_Y(k-i) \times p_X(i)\\
+    &= \sum_{i=0}^k e^{-\mu}\frac{\mu^{k-i}}{(k-i)!}e^{-\lambda}\frac{\lambda^i}{i!}\\
+   &= e^{-(\mu + \lambda)}\frac 1{k!}\sum_{i=0}^k \frac{k!}{i!(k-i)!}\mu^{k-i}\lambda^i\\
+   &= e^{-(\mu + \lambda)}\frac 1{k!}\sum_{i=0}^k \comb{k}{i} \mu^{k-i}\lambda^i\\
+   &= \frac{(\mu + \lambda)^k}{k!} \times e^{-(\mu + \lambda)}
+\end{align}
+Hence,  $X+ Y \sim \mathcal P(\mu + \lambda)$.
+\begin{align}
+\pr{X=1|X+Y=4} &= \frac{\pr{X=1, Y=3}}{\pr{X+Y=4}}\\
+&= \frac{\pr{X=1} \times \pr{Y=3}}{\pr{X+Y=4}} \\
+&= \frac{\dfrac{e^{-1}\times1^{1}}{1!} \times \dfrac{e^{-2}\times2^{3}}{3!}}{\dfrac{e^{-3}\times3^{4}}{4!}}\\
+&= 4 \times \frac{(1)(2)^{3}}{(3)^{4}}\\
+&= \frac{32}{81}\\
+&= 0.39506172839
+\end{align}
