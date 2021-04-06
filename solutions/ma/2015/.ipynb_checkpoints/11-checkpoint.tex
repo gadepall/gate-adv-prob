@@ -1,0 +1,118 @@
+
+Let Consider, Bernoulli random variables say $X$. Here, $P(X=n)$ refer to the probability that experiment ends in exactly $n^{th}$ rolls. Thus, problem is asking for $p_5.$ We note that
+\begin{align}
+p_1=0, p_2=\frac{1}{6^{2}}
+\end{align} 
+\begin{figure}
+\centering
+\tikzset{every picture/.style={line width=0.5pt}} %set default line width to 0.75pt        
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-0.8,xscale=1]
+%uncomment if require:  %set diagram left start at 0, and has height of 300
+\path (100,0);
+%Straight Lines [id:da22181978815813874] 
+\draw    (296,41) -- (404.07,103.2) ;
+\draw [shift={(405.8,104.2)}, rotate = 209.92000000000002] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da161455286927225] 
+\draw    (296,41) -- (196.48,105.12) ;
+\draw [shift={(194.8,106.2)}, rotate = 327.21000000000004] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2511419168154414] 
+\draw    (123.8,133.2) -- (151.8,133.2) ;
+%Straight Lines [id:da06439769803839601] 
+\draw    (165.8,133.2) -- (193.8,133.2) ;
+%Straight Lines [id:da14609392755284478] 
+\draw    (341.8,134.2) -- (369.8,134.2) ;
+%Straight Lines [id:da38196067412588475] 
+\draw    (136.8,139.2) -- (137.7,158.2) ;
+\draw [shift={(137.8,160.2)}, rotate = 267.27] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6427254369866533] 
+\draw    (175.8,139.2) -- (176.7,158.2) ;
+\draw [shift={(176.8,160.2)}, rotate = 267.27] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7865775583247143] 
+\draw    (356.8,139.2) -- (357.7,158.2) ;
+\draw [shift={(357.8,160.2)}, rotate = 267.27] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+% Text Node
+\draw (255,15) node [anchor=north west][inner sep=0.75pt]   [align=left] {For};
+% Text Node
+\draw (124,114.4) node [anchor=north west][inner sep=0.75pt]    {$1/6$};
+% Text Node
+\draw (98,389.4) node [anchor=north west][inner sep=0.75pt]    {$ $};
+% Text Node
+\draw (283,15.4) node [anchor=north west][inner sep=0.75pt]    {$p_x(n)$};
+% Text Node
+\draw (164,114.4) node [anchor=north west][inner sep=0.75pt]    {$5/6$};
+% Text Node
+\draw (341,115.4) node [anchor=north west][inner sep=0.75pt]    {$5/6$};
+% Text Node
+\draw (203,112.4) node [anchor=north west][inner sep=0.75pt]    {$\underbrace{p_x(n-2)}_{n-2}$};
+% Text Node
+\draw (385,113.4) node [anchor=north west][inner sep=0.75pt]    {$\underbrace{p_x(n-1)}_{n-1}$};
+% Text Node
+\draw (307,116) node [anchor=north west][inner sep=0.75pt]   [align=left] {OR};
+% Text Node
+\draw (104,157) node [anchor=north west][inner sep=0.75pt]   [align=left] {Here 6 \\ occur};
+% Text Node
+\draw (163,157) node [anchor=north west][inner sep=0.75pt]   [align=left] {Here 6\\ \ not\\ occur};
+% Text Node
+\draw (337,158) node [anchor=north west][inner sep=0.75pt]   [align=left] {Here 6\\ \ not\\ occur};
+% Text Node
+\draw (149,114.4) node [anchor=north west][inner sep=0.75pt]    {$\times $};
+% Text Node
+\draw (188.8,113.6) node [anchor=north west][inner sep=0.75pt]    {$\times $};
+% Text Node
+\draw (368,114.4) node [anchor=north west][inner sep=0.75pt]    {$\times $};
+\end{tikzpicture}
+\label{ma2015-11:fig:my_label}
+\end{figure}
+For $n>2,$ we remark that the first roll is either a 6 or it isn't. If it is, then the second roll can't be a 6. That leads to the recursion
+\begin{align}
+p_n=\frac{1}{6} \times \frac{5}{6} \times p_{n-2}+\frac{5}{6} \times p_{n-1}
+\end{align}
+Put $n=0,$ we get
+\begin{align}
+&p_2=\frac{5}{6^{2}}p_0+\frac{5}{6}p_1\\
+&\frac{1}{6^{2}}=\frac{5}{6^{2}}p_0\\
+&p_0=\frac{1}{5}
+\end{align}
+Now, put n=n+2 
+We have,
+\begin{align}
+p_{n+2}=\frac{5}{6^{2}}p_{n}+\frac{5}{6}p_{n+1},p_0=\frac{1}{5},p_1=0
+\end{align}
+Taking, Z-transform both side,
+\begin{align}
+Z[p_{n+2}]=&\frac{5}{6^{2}}Z[p_{n}]+\frac{5}{6}Z[p_{n+1}]\\
+z^2\pr{z}-z^2p_0-zp_1=&\frac{5}{6^2}\pr{z}+\frac{5}{6}[z\pr{z}-zp_0]
+\end{align}
+Inserting initial conditions,
+\begin{align}
+z^2\pr{z}-\frac{z^2}{5}=&\frac{5}{6^2}\pr{z}+\frac{5z}{6}\pr{z}-\frac{z}{6} \\
+\pr{z}=&\dfrac{\brak{\dfrac{z^2}{5}-\dfrac{z}{6^2}}}{\brak{z^2-\dfrac{5z}{6}-\dfrac{5}{6^2}}}\\
+\frac{5\pr{z}}{z}=&\frac{36z-5}{36z^2-5z-5}
+\end{align}
+\begin{align}
+\frac{5\sqrt{745}\pr{z}}{36}=\frac{(5+\sqrt{745})z}{(72 z+\sqrt{745}-5)}\\
+-\frac{(\sqrt{745}-5)z}{(-72 z+\sqrt{745}+5)}
+\end{align}
+We know that $Z^{-1}\brak{\dfrac{z}{z-a}}=a^n$\\
+So, taking Z-inverse transform both side,we get
+\begin{align}
+\frac{5\sqrt{745}}{36}Z^{-1}\pr{z}=\dfrac{(5+\sqrt{745})}{72}Z^{-1}\brak{\frac{z}{z-\frac{(5-\sqrt{745})}{72}}}\\
+-\frac{(5-\sqrt{745})}{72}Z^{-1}\brak{\frac{z}{z-\frac{(\sqrt{745}+5)}{72}}}
+\end{align}
+\begin{align}
+\frac{5\sqrt{745}}{36}p_n=\frac{(5+\sqrt{745})}{72}\brak{\frac{(5-\sqrt{745})}{72}}^{n}\\
+-\frac{(5-\sqrt{745})}{72}\brak{\frac{(\sqrt{745}+5)}{72}}^{n}
+\end{align}
+\begin{align}
+p_n=\brak{\frac{1}{2\sqrt{745}}+\frac{1}{10}}\brak{\frac{(5-\sqrt{745})}{72}}^{n}\\
+-\brak{\frac{1}{2\sqrt{745}}-\frac{1}{10}}\brak{\frac{(\sqrt{745}+5)}{72}}^{n}
+\end{align}
+so,
+\begin{align}
+p_5=\brak{\frac{1}{2\sqrt{745}}+\frac{1}{10}}\brak{\frac{(5-\sqrt{745})}{72}}^{5}\\
+-\brak{\frac{1}{2\sqrt{745}}-\frac{1}{10}}\brak{\frac{(\sqrt{745}+5)}{72}}^{5}
+\end{align}
+\begin{align}
+p_5=0.001146095297972871
+\end{align}
+Hence $(\mathrm{C})$ is correct option.

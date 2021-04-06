@@ -1,0 +1,36 @@
+\section*{Solution}
+Let the given table defines the variables
+\begin{table}[h]
+    \centering
+    \resizebox{\columnwidth}{!}{
+        \begin{tabular}{|c|c|}
+            \hline
+            Variables & Definition \\
+            \hline
+            $X$ & Random variable \\
+            \hline
+            $p$ & Probability of success \\
+            \hline
+            $n$ & Number of trials \\
+            \hline
+            $k$ & Number of successes \\
+            \hline
+        \end{tabular}
+    }
+    \caption{Definition of Variables}
+    \label{ma2010-2:table:1}
+\end{table}
+By Binomial Distribution, we have
+\begin{align}
+    \pr{X=k} &= \comb{^n}{C}{_k} p^k (1-p)^{n-k}
+\end{align}
+Given $\pr{X=0}=\pr{X=1}$
+\begin{align}
+    \pr{X=0} &= \pr{X=1} \\
+    \comb{^n}{C}{_0} p^0 (1-p)^{n-0} &= \comb{^n}{C}{_1} p^1 (1-p)^{n-1} \\
+    (1-p)^{n} &= n p (1-p)^{n-1} \\
+    (1-p) &= n p \\
+    1 &= (1+n) p \\
+    p &= \frac{1}{n+1}
+\end{align}
+Therefore, the value of $p$ is option (C) $\frac{1}{n+1}$

@@ -1,0 +1,48 @@
+
+Consider a unit step function $u(x)$,
+\begin{align}
+u(x) = 
+    \begin{cases}
+        1 & x \geq 0 \\
+        0 & \text{otherwise}
+    \end{cases}
+\end{align}
+We will remove the discontinuity at $x=0$ by defining $u_{\alpha}(x)$ for any $\alpha > 0$,
+\begin{align}
+u_{\alpha}(x) &= 
+    \begin{cases}
+        1 & x > \frac{\alpha}{2} \\
+        \frac{1}{\alpha}(x + \frac{\alpha}{2}) & -\frac{\alpha}{2} \leq x \leq \frac{\alpha}{2} \\
+        0 & x < -\frac{\alpha}{2}
+    \end{cases}\\
+\delta_{\alpha}(x) &= \frac{du_{\alpha}(x)}{dx}\\
+\delta_{\alpha}(x) &=
+    \begin{cases}
+        \frac{1}{\alpha} & -\frac{\alpha}{2} \leq x \leq \frac{\alpha}{2} \\
+        0 & |x| > \frac{\alpha}{2}
+    \end{cases}\\
+u(x) &= \lim_{\alpha \to 0} u_{\alpha}(x)\\
+\delta (x) &= \lim_{\alpha \to 0} \delta_{\alpha}(x)
+\end{align}
+\begin{align}
+    \int_{-\infty}^{\infty}g(x)\delta(x-x_0)dx = g(x_0) \label{ma2015-17:eq:1}
+\end{align}
+We will add dirac $\delta$ functions to remove discontinuities in $F(x)$.
+%We will add $\frac{1}{4}u(x) + \frac{1}{12}u(x - 1) + \frac{1}{6}u(x-2) + \frac{1}{2}u\brak{x-\frac{11}{3}}$ to $F(x)$
+\begin{align}
+    f_{X}(x) &= \frac{dF(x)}{dx}
+\end{align}
+\begin{multline}
+    f_{X}(x) = \frac{1}{4}\delta(x) + \frac{1}{12}\delta(x - 1) + \frac{1}{6}\delta(x-2) +\\ \frac{1}{2}\delta\brak{x-\frac{11}{3}} + 0
+\end{multline}
+We will use \eqref{ma2015-17:eq:1} to compute E(X)
+\begin{align}
+    E(X) = \int_{-\infty}^{\infty}xf_X(x)dx
+\end{align}
+\begin{multline}
+    E(X) = \int_{-\infty}^{\infty}\frac{1}{4}x\delta(x) + \frac{1}{12}x\delta(x - 1) +\\ \frac{1}{6}x\delta(x-2) + \frac{1}{2}x\delta\brak{x-\frac{11}{3}}dx
+\end{multline}
+\begin{align}
+    E(X) &= {\frac{1}{4}}\times 0 + {\frac{1}{12}}\times 1 + {\frac{1}{6}}\times 2 + {\frac{1}{2}}\times{\frac{11}{3}}\\
+    E(X) &= 2.25
+\end{align}
