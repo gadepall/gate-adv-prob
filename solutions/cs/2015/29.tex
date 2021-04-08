@@ -1,0 +1,158 @@
+Given a fair coin is flipped twice.\\
+Let us define a Markov chain with states \{1,2,3,4\}, such that 
+\begin{table}[hbt!]
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|l|}
+\hline
+\textbf{State} & \multicolumn{1}{c|}{\textbf{Events}}                     \\ \hline
+1                 & Event of tossing a fair coin twice                           \\ \hline
+2                 & Event of obtaining 'N' as the output                         \\ \hline
+3                 & Event of obtaining 'Y' as the output                         \\ \hline
+4                 & Event of obtaining (TAIL,TAIL) as the output                 \\ \hline
+\end{tabular}
+}
+\caption{Representation of different events}
+\label{cs2015-29table:1}
+\end{table}
+\\We know that when a fair coin is tossed,
+\begin{align}
+    \pr{\text{HEAD}} &=  1/2 \text{ and }\\
+    \pr{\text{TAIL}} &=  1/2.
+\end{align}
+Then, \\
+\textbf{Markov chain diagram :}\\
+\begin{tikzpicture}[font=\sffamily]
+        % Setup the style for the states
+        \tikzset{node style/.style={state, 
+                                    minimum width=2cm,
+                                    line width=0.5mm,
+                                    fill=gray!20!white}}
+        % Draw the states
+        \node[node style] at (1, 0)     (2)     {2};
+        \node[node style] at (4, 0)     (3)     {3};
+        \node[node style] at (7, 0)     (4)     {4};
+        \node[node style] at (4, -5)    (1)     {1};
+        
+        % Connect the states with arrows
+        \draw[every loop,
+              auto=right,
+              line width=1mm,
+              >=latex,
+              draw=orange,
+              fill=orange]
+            (1)     edge[bend left=10, auto=left]  node {0.5} (2)
+            (1)     edge                node {0.25} (3)
+            (1)     edge[bend right=10, auto=right] node {0.25} (4)
+            (4)     edge[bend left=50, auto=left]            node {1} (1)
+            (3)     edge[loop above]                node {1} (3)
+            (2)     edge[loop above]                node {1} (2)
+            ;
+\end{tikzpicture}
+The state transition matrix (P) for the Markov chain is
+\begin{align}
+\label{cs2015-291}
+    P=\begin{blockarray}{ccccc}
+& 1 & 2 & 3 & 4 \\
+\begin{block}{c[cccc]}
+  1 & 0 & \frac{1}{2} & \frac{1}{4}  & \frac{1}{4}  \\
+  2 & 0 & 1 & 0 & 0 \\
+  3 & 0 & 0 & 1 & 0 \\
+  4 & 1 & 0 & 0 & 0 \\
+\end{block}
+\end{blockarray}
+\end{align}
+By the definition of transient and absorbing states, we can say that 1,4 are transient states whereas 2,3 are absorbing.\\
+Then, the canonical form of the transition matrix is,
+\begin{align}
+\label{cs2015-292}
+    P=\begin{blockarray}{ccccc}
+& 2 & 3 & 1 & 4 \\
+\begin{block}{c[cc|cc]}
+  2 & 1 & 0 & 0 & 0  \\
+  3 & 0 & 1 & 0 & 0 \\ 
+  \cline{2-5}
+  1 & \frac{1}{2} & \frac{1}{4} & 0 & \frac{1}{4} \\
+  4 & 0 & 0 & 1 & 0 \\
+\end{block}
+\end{blockarray}
+\end{align}
+The canonical form divides the transition matrix into four sub-matrices based on the states as listed below.\\
+\begin{blockarray}{ccc}
+& \text{Absorbing} & \text{Non-Absorbing} \\
+\begin{block}{c[c|c]}
+  \text{Absorbing} & I & O \\
+  \cline{2-3}
+  \text{Non-Absorbing} & A & B \\
+  \end{block}
+\end{blockarray}
+\\where,
+\begin{table}[hbt!]
+\centering
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Variable} & \textbf{Type of Matrix} \\
+    \hline
+    $I$ & Identity matrix\\
+    \hline
+    $O$ & Zero matrix\\
+    \hline
+    $A,B$ & Some matrices\\
+    \hline
+\end{tabular}
+\caption{Representation of different matrices}
+\label{cs2015-29table:2}
+\end{table}
+\\and From \eqref{cs2015-292},
+\begin{align}
+\label{cs2015-293}
+    A=\begin{bmatrix}
+    \frac{1}{2} & \frac{1}{4}\\
+    0 & 0\\
+    \end{bmatrix},
+    B=\begin{bmatrix}
+    0 & \frac{1}{4} \\
+    1 & 0 \\
+    \end{bmatrix}
+\end{align}
+The fundamental matrix F for the absorbing Markov chain is defined as 
+\begin{align}
+    F &=(I-B)^{-1} \label{cs2015-294}\\
+\shortintertext{Then,  }
+    F &= \begin{bmatrix}
+    1 & -\frac{1}{4} \\
+    -1 & 1 \\ 
+    \end{bmatrix}^{-1} \\
+    \implies F &= \begin{bmatrix}
+               1.33 & 0.33 \\
+               1.33 & 1.33 \\ 
+               \end{bmatrix}\\
+\shortintertext{Therefore,}
+    FA &= \begin{bmatrix}
+    0.67 & 0.33 \\
+    0.67 & 0.33 \\ 
+    \end{bmatrix}
+    \end{align}
+Then the limiting matrix for the markov chain is 
+\begin{align}
+\label{cs2015-295}
+    \bar P&=\begin{bmatrix}
+    I & O\\
+    FA & O\\
+    \end{bmatrix}
+\end{align}
+where the element $p_{ij}$ of $\bar P$ represents the probability of absorption in state j, when the initial state is i.
+\begin{align}
+  \therefore \bar P&=\begin{blockarray}{ccccc}
+                  & 2 & 3 & 1 & 4 \\
+                  \begin{block}{c[cccc]}
+                  2 & 1 & 0 & 0 & 0  \\
+                  3 & 0 & 1 & 0 & 0 \\ 
+                  1 & 0.67 & 0.33 & 0 & 0 \\
+                  4 & 0.67 & 0.33 & 0 & 0 \\
+                \end{block}
+                \end{blockarray}  
+\end{align}
+Therefore,
+\begin{align}
+    \text{ Req. Probability }= p_{13} = 0.33
+\end{align}
