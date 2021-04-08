@@ -46,3 +46,25 @@ We will use \eqref{ma2015-17:eq:1} to compute E(X)
     E(X) &= {\frac{1}{4}}\times 0 + {\frac{1}{12}}\times 1 + {\frac{1}{6}}\times 2 + {\frac{1}{2}}\times{\frac{11}{3}}\\
     E(X) &= 2.25
 \end{align}
+%
+{Alternative Solution: }
+\begin{align}
+    E(g(X)) = \int_{-\infty}^{\infty} g(x)dF(x)
+\end{align}
+Suppose $F(x)$ is continuously differentiable on \sbrak{a,b} except at a finite number of points $c_1, c_2, \dots c_n$.\\
+\begin{multline}
+    \int_{a}^{b}g(x)dF(x) = \int_{a}^{c_1}g(x)dF(x) +\\ g(c_1)\sbrak{F(c_1) - \lim_{\substack{x \to c_1 \\ x < c_1}}F(x)} + \\ \int_{c_1}^{c_2}g(x)dF(x) + \\g(c_2)\sbrak{F(c_2) - \lim_{\substack{x \to c_2 \\ x < c_2}}F(x)} + \dots +\\ \int_{c_{n-1}}^{c_n}g(x)dF(x) +\\ g(c_n)\sbrak{F(c_n) - \lim_{\substack{x \to c_n \\ x < c_n}}F(x)} + \\ \int_{c_n}^{b}g(x)dF(x)
+\end{multline}
+As per the question, $g(X) = X$
+\begin{align}
+    E(X) = \int_{-\infty}^{\infty} xdF(x)
+\end{align}
+\begin{multline}
+    E(X) = \int_{-\infty}^{0}xdF(x) + 0\sbrak{F(0) - \lim_{\substack{x \to 0 \\ x < 0}}F(x)} + \\ \int_{0}^{1}xdF(x) + 1\sbrak{F(1) - \lim_{\substack{x \to 1 \\ x < 1}}F(x)} + \\ \int_{1}^{2}xdF(x) + 2\sbrak{F(2) - \lim_{\substack{x \to 2 \\ x < 2}}F(x)} + \\ \int_{2}^{\frac{11}{3}}xdF(x) +  \frac{11}{3}\sbrak{F\brak{\frac{11}{3}} - \lim_{\substack{x \to \frac{11}{3} \\ x < \frac{11}{3}}}F(x)} +\\ \int_{\frac{11}{3}}^{\infty}xdF(x)
+\end{multline}
+\begin{multline}
+    \int_{-\infty}^{0}xdF(x) = \int_{0}^{1}xdF(x) = \int_{1}^{2}xdF(x) = \\ \int_{2}^{\frac{11}{3}}xdF(x) = \int_{\frac{11}{3}}^{\infty}xdF(x) = 0
+\end{multline}
+\begin{align}
+    E(X) = 2.25
+\end{align}
