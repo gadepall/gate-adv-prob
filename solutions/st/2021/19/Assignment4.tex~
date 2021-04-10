@@ -20,9 +20,9 @@ From \textbf{The Law of Large Numbers}, we have that %Keep either line 166 or 16
  for large $n$, $Z_n=E\left(-\log_e \left( 2-X_i \right)\right)$ should be close to $E\left(-\log_e \left( 2-X \right)\right)=E(Z)$. i.e.
 \begin{align}
     \pr{\lim\limits_{n \to \infty}Z_n=E(Z)}=1
-    \label{st2021-19:Zn_and_Z}
+    \label{Zn_and_Z}
 \end{align}
-\textbf{If \pr{\lim_{n \to \infty}Y_n=Y}=1, we say that $Y_n$ almost surely converges to $Y$.} Therefore, by \eqref{st2021-19:Zn_and_Z} as $n \to \infty$, $Z_n$ almost surely converges to $E(Z)$.\\
+\textbf{If \pr{\lim_{n \to \infty}Y_n=Y}=1, we say that $Y_n$ almost surely converges to $Y$.} Therefore, by \eqref{Zn_and_Z} as $n \to \infty$, $Z_n$ almost surely converges to $E(Z)$.\\
 \par The CDF of $Z$ is defined as 
 \begin{align}
     F_Z(z) &= \pr{Z \leq z} \\
@@ -32,7 +32,7 @@ From \textbf{The Law of Large Numbers}, we have that %Keep either line 166 or 16
            &= \pr{X \leq 2- \exp\brak{-z}}\\
            &= F_X\brak{2- \exp\brak{-z}}
 %           \\&=  1-\frac{exp(-z)}{2}
-\label{st2021-19:CDF_Z}
+\label{CDF_Z}
 \end{align}
 The CDF for X ($F_X(x)$), a uniform distribution on $(0,2)$ is given by
 \begin{align}
@@ -44,7 +44,7 @@ F_X(x) =
 \end{cases}
 \end{align}
 %
-Substituting the above in \eqref{st2021-19:CDF_Z},
+Substituting the above in \eqref{CDF_Z},
 %
 \begin{multline}
 F_X\brak{2- \exp(-z)} =
@@ -62,17 +62,17 @@ F_Z(z) &=
 0 & z < -\log_e (2) \\
 1- \frac{\exp(-z)}{2} & z \geq -\log_e (2)
 \end{cases}
-\label{st2021-19:CDF_Z_Final}\\
+\label{CDF_Z_Final}\\
 \implies f_Z(z)&=\dfrac{\text{d}(F_Z(z))}{\text{d}z}   
 =\begin{cases}
 0 & z < -\log_e (2) \\
 \frac{\exp(-z)}{2} & z \geq -\log_e (2)
 \end{cases}
-\label{st2021-19:PDF_Z_Final}
+\label{PDF_Z_Final}
 \end{align}
-\begin{figure}[!ht]
+\begin{figure}[H]
     \centering
-      \includegraphics[width=\columnwidth]{solutions/st/2021/19/Figures/CDF_Z.png}
+      \includegraphics[width=\columnwidth]{Figures/CDF_Z.png}
      \caption{$F_Z(z)$}
 \end{figure}
 Now calculating the expectation value for $Z$, we have

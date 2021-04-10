@@ -1,0 +1,46 @@
+
+Given, for X $>$ 0 ,$E(X) = 9$, $E\brak{\frac{1}{X+1}}$ can be estimated by Jensens's Inequality. \\
+\textbf{pre - requisites:}\\
+In general, $\phi(X)$ is a convex function iff:
+\begin{equation*}
+    \frac{d^2 \phi}{dX^2} \ge 0
+\end{equation*}
+\textbf{Jensen's Inequality:}\\
+In the context of probability theory, it is generally stated in the following form: if X is a random variable and $\phi$ is a convex function, then
+\begin{equation*}
+\tag{1} \label{st2021-1:jenson}
+    \phi(E(X)) \le E(\phi(X))
+\end{equation*}
+\begin{align*}
+    \text{So for } \phi(X) &= \frac{1}{X+1}, \\
+                \frac{d\phi}{dX} &= - \frac{1}{(X+1)^{2}} \\
+                \tag{2} \label{st2021-1:phi}
+                \frac{d^2 \phi}{dX^2} &= \frac{2}{(X+1)^{3}} 
+    \implies \frac{d^2 \phi}{dX^2} \ge 0,(\because X>0 )
+\end{align*}
+by eq \eqref{st2021-1:jenson} and \eqref{st2021-1:phi}
+\begin{align*}
+    E\brak{\frac{1}{X+1}} &\ge \frac{1}{E(X)+1} \\
+    \implies E\brak{\frac{1}{X+1}} &\ge \frac{1}{9 + 1} \\
+    \tag{3} \label{st2021-1:Part 1}
+    \implies E\brak{\frac{1}{X+1}} &\ge 0.1
+\end{align*}
+$\pr{X \ge 10}$ can be estimated by Markov's Inequality.\\
+\textbf{Markov's Inequality:}
+If X is a non-negative random variable and a $>$ 0, then the probability that X is at least a is at most the expectation of X divided by a. \\
+Mathematically,
+\begin{equation*}
+    \tag{4} \label{st2021-1:markov}
+    \pr{X \ge a} \le \frac{E(X)}{a}
+\end{equation*}
+by \eqref{st2021-1:markov} for a = 10
+\begin{align*}
+    \pr{X \ge 10} &\le \frac{E(X)}{10} \\
+    \implies \pr{X \ge 10} &\le \frac{9}{10} \\
+    \tag{5} \label{st2021-1:Part 2}
+   \therefore \pr{X \ge 10} &\le 0.9
+\end{align*}
+So, from \eqref{st2021-1:Part 1} and \eqref{st2021-1:Part 2} \\
+\begin{center}
+     \boxed{\textbf{Option 1 is the Correct Answer}}
+\end{center}

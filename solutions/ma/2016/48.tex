@@ -1,0 +1,38 @@
+\begin{align}
+f_{X_{i}}\brak{x} ={}&\begin{cases}
+1 & 0<x<1\\
+0 & \text{otherwise}
+\end{cases}
+\end{align}
+Let $Y_{1},Y_{2},\cdots,$ be another sequence of random variables where $Y_{i} = -\ln{\brak{1-X_{i}}},  i=1,2,3,\cdots$
+\\ 
+\begin{align}
+f_{Y_{i}}\brak{x}={}& \frac{f_{X_{i}}\brak{x}}{\frac{dY_{i}}{dX_{i}}}\\
+f_{Y_{i}}\brak{x}={}&\begin{cases}
+e^{-x} & x>0\\
+0 & \text{otherwise}
+\end{cases}
+\end{align}
+From the above probability function, we have all $Y_{i}'$s to be exponential random variables.\\
+\begin{align}
+Y_{i}\sim \text{Exp}\brak{1}\\
+\Rightarrow \mu = 1, \sigma^2 = 1
+\end{align}
+The required probability is 
+\begin{align}
+\lim_{n\to\infty}\pr{\sum_{i=1}^{n}Y_{i}>n}\\
+=\lim_{n\to\infty}\pr{\overline{Y_{n}}>1}
+\end{align}
+Consider \begin{align}
+Z=\lim_{n\to\infty}\sqrt{n}\brak{\frac{\overline{Y_{n}}-\mu}{\sigma}}
+\end{align}
+\\ Since $\overline{Y_{n}}>1$, we have $Z>0$.\\
+By central limit theorem, we have Z to be a standard normal distribution.
+\begin{align}
+Z \sim {\mathcal {N}}\brak{0 ,1}\\
+\lim_{n\to\infty}\pr{\overline{Y_{n}}>1}={}&\pr{Z>0}\\
+={}&\frac{1}{2}
+\end{align}
+\begin{align}
+\therefore \lim_{n\to\infty} \pr{-\ln{\brak{1-X_{1}}}-\cdots-\ln{\brak{1-X_{n}}} > n}=0.5
+\end{align}

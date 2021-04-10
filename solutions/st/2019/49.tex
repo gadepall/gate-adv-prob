@@ -1,0 +1,23 @@
+We know that,
+\begin{align}
+\phi_X(t) &= \int_\mathbb{R} e^{itx}f_X(x) \; dx\\
+\phi_X(2\pi) &= \int_\mathbb{R} e^{2\pi ix}f_X(x) \; dx\\
+&= \int_\mathbb{R} \cos(2\pi x) f_X(x) \; dx \nonumber \\
+&+ i \int_\mathbb{R} \sin(2 \pi x) f_X(x) \; dx \\
+\because \phi_X(2\pi) = 1, & \int_\mathbb{R} \sin(2 \pi x) f_X(x) \; dx = 0\\
+1 &= \phi_X(2\pi)\\
+&= \int_\mathbb{R} \cos(2\pi x) f_X(x) \; dx
+\end{align}
+Assume that $\cos(2\pi x) \neq 1$. This implies that $\cos(2\pi x) < 1 \; \forall \; x \in \mathbb{R}$.
+\begin{align}
+\therefore 1 &= \int_\mathbb{R} \cos(2\pi x) f_X(x) \; dx \\
+&< \int_\mathbb{R} 1 \cdot f_X(x) \; dx \\
+&< \int_\mathbb{R} f_X(x) \; dx \\
+&< 1. \tag{Contradiction}
+\end{align}
+Hence, our assumption that $\cos(2\pi x) \neq 1$ is incorrect.
+\begin{align}
+&\therefore \cos(2 \pi x) = 1, \; \text{for all  $X=x$}\\
+&\Rightarrow X \in \; \mathbb{Z}\\
+&\Rightarrow \pr{X \in \mathbb{Z}} = 1
+\end{align}

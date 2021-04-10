@@ -1,0 +1,25 @@
+It is given that $X_1$, $X_2$ and $X_3$ are independent and identically distributed random variables.
+\begin{align}
+    \nonumber E\left(X^2_1 | X_1^2 + X_2^2 + X_3^2 = t\right) &= 
+    E\left(X^2_2 | X_1^2 + X_2^2 + X_3^2 = t\right)\\ &= 
+    E\left(X^2_3 | X_1^2 + X_2^2 + X_3^2 = t\right)\label{ma2015-28:eq:2.0.1}
+\end{align}
+Now,
+\begin{align}
+   \nonumber &\sum_{n=1}^3 E\left(X^2_n | X_1^2 + X_2^2 + X_3^2 = t\right)\\ &= E\left(X_1^2 + X_2^2 + X_3^2 | X_1^2 + X_2^2 + X_3^2 = t\right)\\
+   &= t
+\end{align}
+Hence, from \eqref{ma2015-28:eq:2.0.1}.
+\begin{align}
+     E\left(X^2_1 | X_1^2 + X_2^2 + X_3^2 = t\right) &= \frac{t}{3}\\
+     \therefore \psi(t) &= \frac{t}{3}\label{ma2015-28:eq:2.0.5}
+\end{align}
+Hence, from \eqref{ma2015-28:eq:2.0.5},
+\begin{align}
+    E(\psi((X_1+X_2)^2)) &= E\left(\frac{(X_1+X_2)^2)}{3}\right)\\
+    &= E\left(\frac{X_1^2 + X_2^2 + 2X_1\times X_2}{3}\right)\\
+    &= \frac{E(X_1^2) + E(X_2^2) + 2\times E(X_1) \times E(X_2)}{3}\\
+    &= \frac{\frac{15}{4}+\frac{15}{4}+ 2\times0\times0}{3}\\
+    &= \frac{15}{6}\\
+    \therefore E(\psi((X_1+X_2)^2)) &= 2.5
+\end{align}

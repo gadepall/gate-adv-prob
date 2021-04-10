@@ -1,0 +1,43 @@
+The expectation operator, 
+\begin{align}
+    E\brak{X_1 + .... + X_n}
+    &= E\brak{X_1} +.....+ E\brak{X_n} \label{ma2016-46:eq 2.0.1}
+\end{align}
+We know that, 
+\begin{align}
+    E\brak{X} 
+    &= \sum_{i = 1}^\infty x_i\Pr\brak{X = x_i}\\
+    &=  \sum_{i = 1}^\infty k_i\Pr\brak{X = k_i} \label{ma2016-46:eq 2.0.3}
+\end{align}
+So now, 
+\begin{align}
+    E\brak{X_1} = k_1\Pr\brak{X = k_1} = 1 \brak{\frac{1}{2}} \label{ma2016-46:eq 2.0.4}
+\end{align}
+Similarly, 
+\begin{align}
+    E\brak{X_2} = k_2\Pr\brak{X = k_2} = 2 \brak{\frac{1}{2}}^{2} \label{ma2016-46:eq 2.0.5}
+\end{align}
+and the pattern follows.
+Let 
+\begin{align}
+    E\brak{X_1 + .... + X_n} = S \label{ma2016-46:eq 2.0.6}
+\end{align}
+By substituting \eqref{ma2016-46:eq 2.0.4} and \eqref{ma2016-46:eq 2.0.5} in \eqref{ma2016-46:eq 2.0.1}
+\begin{align}
+    S = 1 \brak{\frac{1}{2}} + 2 \brak{\frac{1}{2}}^{2} + 3\brak{\frac{1}{2}}^{3} + ..... \label{ma2016-46:eq 2.0.7}
+\end{align}
+Dividing by 2 on both sides 
+\begin{align}
+   \frac{S}{2} =  0\brak{\frac{1}{2}} + 1\brak{\frac{1}{2}}^{1} + 2\brak{\frac{1}{2}}^{2} + ..... \label{ma2016-46:eq 2.0.8}
+\end{align}
+Subtracting \eqref{ma2016-46:eq 2.0.8} from \eqref{ma2016-46:eq 2.0.7}
+\begin{align}
+    \frac{S}{2} 
+    &= \frac{1}{2} + \frac{1}{2}^{2} + \frac{1}{2}^{3}  + ....\\
+    &= \frac{1/2}{1-1/2} \\
+    &= 1
+\end{align}
+Therefore, from \eqref{ma2016-46:eq 2.0.6}
+\begin{align}
+    E \brak{X_1 + X_2 +..... + X_n} = 2
+\end{align}
