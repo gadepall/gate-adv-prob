@@ -42,6 +42,7 @@
 %\usepackage{stmaryrd}
 \usepackage{tkz-euclide} % loads  TikZ and tkz-base
 %\usetkzobj{all}
+\usetikzlibrary{automata, positioning}
 \usetikzlibrary{calc,math}
 \usetikzlibrary{fadings}
 \usepackage{listings}
@@ -56,6 +57,7 @@
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
+\usepackage{blkarray}
 %\usepackage{enumerate}
 
 %\usepackage{wasysym}
@@ -824,6 +826,50 @@ Then, $E(\psi((X_1+X_2)^2))$ is equal to,
 \end{enumerate}
 \solution
   \input{solutions/ec/25.tex}
+%
+\item Let $X \sim B(5,\frac{1}{2})$ and $Y \sim U(0,1)$. Then $\frac{P(X + Y \leq 2)}{P(X + Y \geq 5)}$ is equal to 
+(where 
+$B(n,p)$ : Binomial distribution with n trials and success probability p; $n \in \{1,2, \dots \}$ and  $p \in (0,1)$
+U(a,b) : Uniform distribution on the interval $(a,b), -\infty < a < b < \infty$  )
+\\
+\solution
+  \input{solutions/ma/2015/8.tex}
+%
+\item  Consider the experiment with the following steps.
+\begin{enumerate}
+\item  Flip a coin twice.
+\item If the outcomes are (TAILS, HEADS) then output Y and stop.
+\item If the outcomes are either (HEADS, HEADS) or (HEADS, TAILS), then output N and stop.
+\item If the outcomes are (TAILS, TAILS), then go to Step 1.
+\end{enumerate}
+The probability that the output of the experiment is Y is (upto two decimal places)......
+\\
+\solution 
+  \input{solutions/cs/2016/29.tex}
+%
+\item Let $X_1,X_2,\cdots,X_n$ be a random sample of size n $(n\ge2)$ from an exponential distribution with the probability density function
+\begin{align}
+f_X\brak{x,\theta}=
+\begin{cases}
+e^{-(x-2\theta)}, & x>2\theta
+\\
+0, & otherwise
+\end{cases}
+\end{align}
+where $\theta\in\brak{0,\infty}$. If $X_{(1)}=min\cbrak{X_1,X_2,\cdots,X_n}$ then the conditional expectation 
+\begin{align}
+     \nonumber   \mean{\frac{1}{\theta}\brak{X_{(1)}-\frac{1}{n}}|X_1-X_2=2}=\rule{1.5cm}{0.15mm}
+\end{align}
+\solution 
+  \input{solutions/st/2020/23.tex}
+%
+\item Let $X \sim B\brak{5,\frac{1}{2}}$ and $Y \sim U(0,1)$. The the value of:
+\[
+    \frac{\pr{X+Y \leq 2}}{\pr{X+Y \geq 5}}
+\]
+is equal to? ($X$ and $Y$ are independent)
+\solution 
+  \input{solutions/challenge/1.tex}
 
 \end{enumerate}
 \end{document}

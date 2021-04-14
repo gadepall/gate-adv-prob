@@ -1,0 +1,62 @@
+Characteristic function for $X \sim B\brak{5,\frac{1}{2}}$ will be:
+\begin{align}
+    C_X(t)=\brak{\frac{e^{it}+1}{2}}^5
+\end{align}
+Characteristic function for $Y \sim U(0,1)$ will be:
+\begin{align}
+    C_Y(t)=\frac{e^{it}-1}{it}
+\end{align}
+Since both $X$ and $Y$ are independent we can take:
+\begin{align}
+    Z&=X+Y\\
+    C_Z(t)&=C_X(t)C_Y(t)\\
+    C_Z(t)&= \frac{(e^{it}+1)^5(e^{it}-1)}{32it}
+\end{align}
+Applying Gil-Pelaez formula:
+\begin{align}
+    F_Z(z)=\frac{1}{2}-\frac{1}{\pi}\int_0^\infty \frac{\text{Im}\brak{e^{-itz}C_Z(t)}}{t}dt
+\end{align}
+\begin{multline*}
+    F_Z(z)=\frac{1}{2}-\frac{1}{\pi}\int_0^\infty\frac{1}{2it}\brak{\frac{(e^{it}+1)^5(e^{it}-1)e^{-itz}}{32it}}\\+\frac{1}{2it}\brak{\frac{(e^{-it}+1)^5(e^{-it}-1)e^{itz}}{32it}}dt
+\end{multline*}
+Substituting $z=2$, the value for $\pr{Z\leq 2}$:
+\begin{align}
+\nonumber
+    &=\frac{1}{2}+\frac{1}{\pi}\int_0^\infty \frac{8\cos{2t}+2\cos{4t}}{64t^2}dt\\
+    &\quad+\frac{1}{\pi}\int_0^\infty\frac{+8\cos{3t}-8\cos{t}-10}{64t^2}dt\label{challenge/1first_sub}
+\end{align}
+Finding a general expression for integrating:
+\begin{align}
+    \int \frac{\cos{ax}}{x^2}dx=-\frac{\cos{ax}}{x}-a\int\frac{\sin{ax}}{x}dx + C\label{challenge/1gen1}
+\end{align}
+By applying integration by parts. Now finding the value of other integral, by substituting $u=ax$ for limits as $0$ and $\infty$:
+\begin{align}
+    \int_0^\infty\frac{a\sin{ax}}{x}dx &= \int_0^\infty\frac{a\sin{u}}{u}du\\
+    &=\frac{a\pi}{2}\label{challenge/1gen2}
+\end{align}
+Now using the above general expressions to calculate \eqref{challenge/1first_sub} and simplifying the expression after putting the limits we get
+\begin{align}
+    &=\frac{-1}{8\pi}\brak{\int_0^\infty\frac{\sin{4t}+3\sin{3t}+2\sin{2t}-\sin{t}}{t}dt}\\
+    &\quad -\frac{2(\cos{t}-1)(\cos{t}+1)^3}{8\pi t}\bigg|_0^\infty+\frac{1}{2}\\
+    &=\frac{1}{2} + \frac{-1}{8\pi}\times \frac{5\pi}{2}+0\\
+    &=\frac{3}{16}\label{challenge/1first_value}
+\end{align}
+Using \eqref{challenge/1gen2} and \eqref{challenge/1gen1} to calculate for our second case
+Similarly on substituting $z=5$, the value for $\pr{Z\leq 5}$:
+\begin{align}
+\nonumber
+    &=\frac{1}{2} +\frac{1}{\pi}\int_0^\infty\frac{-10\cos{3t}-8\cos{4t}}{64t^2}dt\\&\quad +\frac{1}{\pi}\int_0^\infty\frac{-2\cos{5t}+12\cos{t}+8}{64t^2}dt\\ \nonumber
+    &=\frac{1}{\pi}\brak{\int_0^\infty\frac{5\sin{5t}+16\sin{4t}+15\sin{3t}-6\sin{t}}{32}dt}\\
+    &\quad+\frac{1}{2}+\frac{1}{\pi}\brak{\frac{16(\cos{t}-1)(\cos{t})(\cos{t}+1)^3}{32t}\bigg|_0^\infty}\\
+    &=\frac{1}{2}+\frac{1}{\pi}\times\frac{15\pi}{32} + 0\\
+    &=\frac{31}{32}
+\end{align}
+The value for $\pr{Z\geq 5}$:
+\begin{align}
+    \pr{Z>5}&=1-\pr{Z\leq 5}\\
+    &=1-\frac{31}{32}=\frac{1}{32}\label{challenge/1second_value}
+\end{align}
+Upon substituting \eqref{challenge/1first_value}and \eqref{challenge/1second_value}, we get:
+\begin{align}
+    \frac{\pr{X+Y \leq 2}}{\pr{X+Y \geq 5}} = 6
+\end{align}

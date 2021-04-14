@@ -1,0 +1,163 @@
+\textbf{DEFINITIONS:}
+\begin{enumerate}
+    \item \textbf{Completeness: }The statistic T is said to be complete for the distribution of X if, for every measurable function g
+    if 
+    \begin{align}
+        E(g(T))=0\implies P(g(T)=0)=1\;\forall\theta
+    \end{align}
+    \item\textbf{Sufficiency: }
+    Let $f(x,\theta)$ be the joint pdf of the sample X. A statistic T is sufficient for $\theta$ iff there are functions h (does not depend on $\theta$)and g ( depends on $\theta$) on the range of T such that
+\begin{align}
+    f(x,\theta)=g(T(x),\theta)\;h(x)
+\end{align}
+    \item\textbf{Basu's Theorem: }
+    If T(X) is complete and sufficient, and S(X) is ancillary, then S(X) and T(X) are independent for all $\theta$.
+    
+    $\implies$complete sufficient statistic is independent of any ancillary statistic.
+\end{enumerate}
+Given PDF of the distribution as,
+\begin{align}
+f_X\brak{x,\theta}=
+\begin{cases}
+e^{-(x-2\theta)}, & x>2\theta
+\\
+0, & otherwise
+\end{cases}\label{st/2020/232}
+\end{align}
+Then CDF of the distribution given is,
+\begin{align}
+    F(x,\theta)&=\int_{-\infty}^x f_X\brak{x,\theta} dx\label{st/2020/233}
+\end{align}
+Using \eqref{st/2020/232} in \eqref{st/2020/233},
+\begin{align}
+F(x,\theta)&=
+\begin{cases}
+0, & x<2\theta
+\\
+1-e^{-(x-2\theta)}, & x>2\theta
+\end{cases}\label{st/2020/234}
+\end{align}
+As given $X_{(1)}=min\cbrak{X_1,X_2,\cdots,X_n}$,\\
+Let us find CDF of $X_{(1)}$,
+\begin{align}
+  \nonumber  F_{X_{(1)}}(x,\theta)&=\pr{X_{(1)}\le x}\\
+  \nonumber  &=\pr{at\,least\,one\, of\, X_1,X_2,\cdots,X_n \le x}\\
+ \nonumber   &=1-\pr{X_{(1)}>x}\\
+  \nonumber  &=1-\pr{X_1>x,X_2>x,\cdots,X_n>1}\\
+  \nonumber &=1-\pr{X_1>x}\cdots \pr{X_n>x}\\
+    &=1-\brak{1-F(x,\theta)}^n\label{st/2020/235}
+\end{align}
+Using \eqref{st/2020/234} in \eqref{st/2020/235},
+\begin{align}
+F_{X_{(1)}}(x,\theta)&=
+\begin{cases}
+0, & x<2\theta
+\\
+1-e^{-n(x-2\theta)}, & x>2\theta
+\end{cases}\label{st/2020/236}
+\end{align}
+Using CDF of $X_{(1)}$ to find PDF of ${X_{(1)}}$,
+\begin{align}
+    f_{X_{(1)}}(x,\theta)= \dfrac{d}{dx}\;F_{X_{(1)}}(x,\theta)\label{st/2020/237}
+\end{align}
+Using \eqref{st/2020/236} in \eqref{st/2020/237}, PDF of $X_{(1)}$ is
+\begin{align}
+f_{X_{(1)}}{(x,\theta)}=
+\begin{cases}
+n e^{-n(x-2\theta)}, & x>2\theta
+\\
+0, & otherwise
+\end{cases}\label{st/2020/238}
+\end{align}
+$X_{(1)},\cdots,X_{(n)}$ are ordered statistics of $X_1,\cdots,X_n$.
+Where $X_{(k)}$ is kth order statistic of $X_1,\cdots,X_n$.
+\begin{align}
+    \implies \sum\limits_{i=1}^n X_i = \sum\limits_{i=1}^n X_{(i)}\label{st/2020/23a_2}
+\end{align}
+Some results that we use in future:
+\begin{enumerate}
+    \item Ordered statistics are complete and sufficient statistic of X.
+    
+    \textbf{Proof:} 
+    Let $E[g(X_{(1)})]=0$,
+    \begin{align}
+        \implies\int\limits_{-\infty}^{\infty} g(x) f_{X_{(1)}}(x) dx&=0\\
+        \int\limits_{2\theta}^{\infty} g(x) n e^{-n(x-2\theta)} dx &=0\\
+        \int\limits_{2\theta}^{\infty} g(x) e^{-n(x-2\theta)} dx &=0\label{st/2020/23a_1}
+    \end{align}
+    differentiating w.r.t $\theta$ on both sides in \eqref{st/2020/23a_1},
+    \begin{align}
+      \nonumber  \dfrac{d}{dx} \int\limits_{2\theta}^{\infty} g(x) e^{-n(x-2\theta)} dx =0\\
+     \nonumber   \dfrac{d}{dx} \brak{\int\limits_{2\theta}^{\infty} g(x) e^{-nx} dx} e^{2n\theta} =0\\
+     \nonumber   2n e^{2n\theta}\int\limits_{2\theta}^{\infty} g(x) e^{-nx} dx+e^{2n\theta}(2)g(2\theta)e^{-2n\theta}=0\\
+     \nonumber2n(0)+2g(2\theta)=0\implies g(2\theta)=0
+    \end{align}
+    $\implies\;X_{(1)}$ is complete statistics.
+    
+    Using \eqref{st/2020/23a_2} in \eqref{st/2020/23a_3}
+    \begin{align}
+        f_X\brak{x,\theta}&=f(x_1,\theta)f(x_2,\theta)\cdots f(x_n,\theta)\\
+        &=e^{-(x_1-2\theta)}e^{-(x_2-2\theta)}\cdots e^{-(x_n-2\theta)}\\
+        &=e^{-\brak{\sum\limits_{i=1}^n x_i-2n\theta}}=e^{-\brak{\sum\limits_{i=1}^n x_{(i)}-2n\theta}}\label{st/2020/23a_3}\\
+        &=\underbrace{ \prod\limits_{j=1}^n e^{-(x_{(j)}-2\theta)}}_\text{g}\times\underbrace{\brak{1}}_\text{h}
+    \end{align}
+    $\therefore$ Ordered statistics of X are sufficient statistics for $\theta$.
+    
+    $\therefore\;X_{(1)}$ is complete and sufficient statistics of $\theta$. 
+    \item $X_1-X_2$ is ancillary of $\theta$.
+    
+    \textbf{Proof: }Let U=$X_1-X_2$ then,
+    \begin{align}
+     \nonumber   F_U(x)&=\pr{X_1-X_2<x}\\
+    \nonumber
+    &=\int\limits_{-\infty}^{\infty}\pr{X_1<x+k}\pr{X_2>k} dk\\
+  \nonumber      &= \int\limits_{2\theta}^{\infty}\brak{1-e^{-\brak{x+k-2\theta}}}\brak{e^{-\brak{k-2\theta}}} dk\\
+ \nonumber &=\int\limits_{2\theta}^{\infty}e^{-\brak{k-2\theta}}-e^{-\brak{2k+x-2\theta}} dk\\
+\nonumber &= \sbrak{\frac{e^{-\brak{k-2\theta}}}{-1}-\frac{e^{-\brak{2k+x-2\theta}}}{-2}}_{2\theta}^{\infty}\\
+  \nonumber  &=(0-0)-\brak{-1+\frac{e^{-x}}{2}}\\
+    F_U(x)&= 1-\frac{e^{-x}}{2}\\
+    \implies f_U(x)&=\dfrac{d}{dx}F_U(x)\\
+    &=\frac{e^{-x}}{2}
+    \end{align}
+    $\therefore\;U=X_1-X_2$ is an ancillary statistic of $\theta$.
+\end{enumerate}
+Let U be a random variable such that $U=X_1-X_2$.
+\begin{multline}
+    \mean{\frac{1}{\theta}\brak{X_{(1)}-\frac{1}{n}}|X_1-X_2=2}\\=\mean{\frac{1}{\theta}\brak{X_{(1)}-\frac{1}{n}}|U=2}\label{st/2020/231}
+\end{multline}
+As $X_1,X_2,\cdots,X_n$ are independent and from Basu's theorem $X_{(1)}$ and U are also independent. \\As we know that if X and Y are independent then $\mean{X|Y}=\mean{X}$. 
+Using this in \eqref{st/2020/231}
+\begin{align}
+ \nonumber   \mean{\frac{1}{\theta}\brak{X_{(1)}-\frac{1}{n}}|U=2}
+    &=\mean{\frac{1}{\theta}\brak{X_{(1)}-\frac{1}{n}}}\\
+    &=\frac{1}{\theta}\brak{\mean{X_{(1)}}-\frac{1}{n}}\label{st/2020/23a}
+\end{align}
+We have to find expectation of $X_{(1)}$,
+\begin{align}
+   \mean{X_{(1)}}&=\int_{-\infty}^{\infty} x f_{X_{(1)}}{(x,\theta)} dx \label{st/2020/239}
+\end{align}
+Using \eqref{st/2020/238} in \eqref{st/2020/239}.
+\begin{align}
+\nonumber \mean{X_{(1)}}&=\int_{2\theta}^{\infty} n x\,e^{-(x-2\theta)n} dx\\
+  &= e^{2n\theta}\int_{2\theta}^{\infty} n x\,e^{-n x} dx \label{st/2020/2310}
+\end{align}
+Using integration by parts in \eqref{st/2020/2310},
+\begin{align}
+    \nonumber \mean{X_{(1)}}
+  &= e^{2n\theta}\int_{2\theta}^{\infty}nx\,e^{-n x}dx\\
+      \nonumber &= e^{2n\theta}\brak{\sbrak{n x \frac{e^{-n x}}{-n}}_{2\theta}^{\infty}-\int_{2\theta}^{\infty} n \frac{e^{-n x}}{-n}dx}\\
+  \nonumber &= e^{2n\theta}\brak{\sbrak{n x \frac{e^{-n x}}{-n}}_{2\theta}^{\infty}+\sbrak{\frac{e^{-n x}}{-n}}_{2\theta}^{\infty}}\\
+  \nonumber &= e^{2n\theta}\brak{2\theta e^{-2n\theta}+\frac{e^{-2n\theta}}{n}}\\
+  \mean{X_{(1)}} &= 2\theta+\frac{1}{n}\label{st/2020/2311}
+\end{align}
+Use \eqref{st/2020/2311} in \eqref{st/2020/23a},
+\begin{align}
+   \nonumber \mean{\frac{1}{\theta}\brak{X_{(1)}-\frac{1}{n}}|U=2}
+    &=\frac{1}{\theta}\brak{\mean{X_{(1)}}-\frac{1}{n}}\\
+   \nonumber &=\frac{1}{\theta}\brak{2\theta+\frac{1}{n}-\frac{1}{n}}\\
+   \mean{\frac{1}{\theta}\brak{X_{(1)}-\frac{1}{n}}|U=2} &= 2\label{st/2020/23b}
+\end{align}
+Using \eqref{st/2020/23b} in \eqref{st/2020/231},
+\begin{align}
+     \nonumber\therefore   \mean{\frac{1}{\theta}\brak{X_{(1)}-\frac{1}{n}}|X_1-X_2=2}=2
+\end{align}

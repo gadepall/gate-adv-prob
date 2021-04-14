@@ -42,6 +42,7 @@
 %\usepackage{stmaryrd}
 \usepackage{tkz-euclide} % loads  TikZ and tkz-base
 %\usetkzobj{all}
+\usetikzlibrary{automata, positioning}
 \usetikzlibrary{calc,math}
 \usetikzlibrary{fadings}
 \usepackage{listings}
@@ -56,6 +57,7 @@
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
+\usepackage{blkarray}
 %\usepackage{enumerate}
 
 %\usepackage{wasysym}
@@ -791,9 +793,83 @@ Then, as $n \to \infty$, the sequence $\{ Z_n \}_{n \geq 1}$ converges almost su
 $\psi(t) = E\left(X^2_1 | X_1^2 + X_2^2 + X_3^2 = t\right), t>0$
 Then, $E(\psi((X_1+X_2)^2))$ is equal to,
 %
+\\
 \solution
   \input{solutions/ma/2015/28.tex}
 %
+\item Let $X_1, X_2, X_3,...$ be a sequence of i.i.d random variables with mean 1. If N is a geometric random variable with the probability mass function $P(N = k) = \frac{1}{2^k}$; k = 1, 2, 3,... and it is independent of the $X_i$'s, then $E\brak{X_1 + X_2 + X_3 +....+ X_n}$ is equal to 
+%
+\\
+\solution
+  \input{solutions/ma/2016/46.tex}
+%
+\item Let X be a random variable with characteristic function $\phi_X(\cdot)$ such that $\phi_X(2 \pi)=1$.Let $\mathbb{Z}$ denote the set of integers.Then $P(X \in \mathbb{Z})$ is equal to $\ldots$
+%
+\solution
+  \input{solutions/st/2019/49.tex}
+%
+\item Let $X_{1},X_{2},X_{3},\cdots$ be a sequence of i.i.d uniform \brak{0,1} random variables. Then the value of 
+\begin{align} \lim_{n\to\infty} \pr{-\ln{\brak{1-X_{1}}}-\cdots-\ln{\brak{1-X_{n}}} > n} 
+\end{align} is equal to 
+%
+%
+\\
+\solution
+  \input{solutions/ma/2016/48.tex}
+%
+\item A fair coin is tossed till a head appears for the first time. The probability that the number of requried tosses is odd,is\\
+\begin{enumerate}
+    \item $\dfrac{1}{3}$\\
+    \item $\dfrac{1}{2}$\\
+    \item $\dfrac{2}{3}$\\
+    \item $\dfrac{3}{4}$
+\end{enumerate}
+\solution
+  \input{solutions/ec/25.tex}
+%
+\item Let $X \sim B(5,\frac{1}{2})$ and $Y \sim U(0,1)$. Then $\frac{P(X + Y \leq 2)}{P(X + Y \geq 5)}$ is equal to 
+(where 
+$B(n,p)$ : Binomial distribution with n trials and success probability p; $n \in \{1,2, \dots \}$ and  $p \in (0,1)$
+U(a,b) : Uniform distribution on the interval $(a,b), -\infty < a < b < \infty$  )
+\\
+\solution
+  \input{solutions/ma/2015/8.tex}
+%
+\item  Consider the experiment with the following steps.
+\begin{enumerate}
+\item  Flip a coin twice.
+\item If the outcomes are (TAILS, HEADS) then output Y and stop.
+\item If the outcomes are either (HEADS, HEADS) or (HEADS, TAILS), then output N and stop.
+\item If the outcomes are (TAILS, TAILS), then go to Step 1.
+\end{enumerate}
+The probability that the output of the experiment is Y is (upto two decimal places)......
+\\
+\solution 
+  \input{solutions/cs/2016/29.tex}
+%
+\item Let $X_1,X_2,\cdots,X_n$ be a random sample of size n $(n\ge2)$ from an exponential distribution with the probability density function
+\begin{align}
+f_X\brak{x,\theta}=
+\begin{cases}
+e^{-(x-2\theta)}, & x>2\theta
+\\
+0, & otherwise
+\end{cases}
+\end{align}
+where $\theta\in\brak{0,\infty}$. If $X_{(1)}=min\cbrak{X_1,X_2,\cdots,X_n}$ then the conditional expectation 
+\begin{align}
+     \nonumber   \mean{\frac{1}{\theta}\brak{X_{(1)}-\frac{1}{n}}|X_1-X_2=2}=\rule{1.5cm}{0.15mm}
+\end{align}
+\solution 
+  \input{solutions/st/2020/23.tex}
+%
+\item Let $X \sim B\brak{5,\frac{1}{2}}$ and $Y \sim U(0,1)$. The the value of:
+\[
+    \frac{\pr{X+Y \leq 2}}{\pr{X+Y \geq 5}}
+\]
+is equal to? ($X$ and $Y$ are independent)
+\solution 
+  \input{solutions/challenge/1.tex}
 
 \end{enumerate}
 \end{document}

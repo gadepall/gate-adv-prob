@@ -1,6 +1,6 @@
 Given a fair coin is flipped twice.\\
 Let us define a Markov chain with states \{1,2,3,4\}, such that 
-\begin{table}[hbt!]
+\begin{table}[h!]
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{|c|l|}
 \hline
@@ -12,7 +12,7 @@ Let us define a Markov chain with states \{1,2,3,4\}, such that
 \end{tabular}
 }
 \caption{Representation of different events}
-\label{cs2016-29:table:1}
+\label{cs/2016/29table:1}
 \end{table}
 \\We know that when a fair coin is tossed,
 \begin{align}
@@ -20,18 +20,21 @@ Let us define a Markov chain with states \{1,2,3,4\}, such that
     \pr{\text{TAIL}} &=  1/2.
 \end{align}
 Then, \\
-\textbf{Markov chain diagram :}\\
-\begin{tikzpicture}[font=\sffamily]
+\begin{figure}
+    \centering
+    \caption{\textbf{Markov chain diagram}}
+    \label{cs/2016/29fig:1}
+    \begin{tikzpicture}[font=\sffamily]
         % Setup the style for the states
         \tikzset{node style/.style={state, 
                                     minimum width=2cm,
                                     line width=0.5mm,
                                     fill=gray!20!white}}
         % Draw the states
-        \node[node style] at (1, 0)     (2)     {2};
-        \node[node style] at (4, 0)     (3)     {3};
-        \node[node style] at (7, 0)     (4)     {4};
-        \node[node style] at (4, -5)    (1)     {1};
+        \node[node style] at (0, 0)     (2)     {2};
+        \node[node style] at (3, 0)     (3)     {3};
+        \node[node style] at (6, 0)     (4)     {4};
+        \node[node style] at (3, -5)    (1)     {1};
         
         % Connect the states with arrows
         \draw[every loop,
@@ -48,9 +51,10 @@ Then, \\
             (2)     edge[loop above]                node {1} (2)
             ;
 \end{tikzpicture}
+\end{figure}
 The state transition matrix (P) for the Markov chain is
 \begin{align}
-\label{cs2016-29:1}
+\label{cs/2016/29eq:1}
     P=\begin{blockarray}{ccccc}
 & 1 & 2 & 3 & 4 \\
 \begin{block}{c[cccc]}
@@ -64,7 +68,7 @@ The state transition matrix (P) for the Markov chain is
 By the definition of transient and absorbing states, we can say that 1,4 are transient states whereas 2,3 are absorbing.\\
 Then, the canonical form of the transition matrix is,
 \begin{align}
-\label{cs2016-29:2}
+\label{cs/2016/29eq:2}
     P=\begin{blockarray}{ccccc}
 & 2 & 3 & 1 & 4 \\
 \begin{block}{c[cc|cc]}
@@ -86,7 +90,7 @@ The canonical form divides the transition matrix into four sub-matrices based on
   \end{block}
 \end{blockarray}
 \\where,
-\begin{table}[hbt!]
+\begin{table}[h!]
 \centering
 \begin{tabular}{|c|c|}
     \hline
@@ -100,11 +104,11 @@ The canonical form divides the transition matrix into four sub-matrices based on
     \hline
 \end{tabular}
 \caption{Representation of different matrices}
-\label{cs2016-29:table:2}
+\label{cs/2016/29table:2}
 \end{table}
-\\and From \eqref{cs2016-29:2},
+\\and From \eqref{cs/2016/29eq:2},
 \begin{align}
-\label{cs2016-29:3}
+\label{cs/2016/29eq:3}
     A=\begin{bmatrix}
     \frac{1}{2} & \frac{1}{4}\\
     0 & 0\\
@@ -116,7 +120,7 @@ The canonical form divides the transition matrix into four sub-matrices based on
 \end{align}
 The fundamental matrix F for the absorbing Markov chain is defined as 
 \begin{align}
-    F &=(I-B)^{-1} \label{cs2016-29:4}\\
+    F &=(I-B)^{-1} \label{cs/2016/29eq:4}\\
 \shortintertext{Then,  }
     F &= \begin{bmatrix}
     1 & -\frac{1}{4} \\
@@ -134,7 +138,7 @@ The fundamental matrix F for the absorbing Markov chain is defined as
     \end{align}
 Then the limiting matrix for the markov chain is 
 \begin{align}
-\label{cs2016-29:5}
+\label{cs/2016/29eq:5}
     \bar P&=\begin{bmatrix}
     I & O\\
     FA & O\\

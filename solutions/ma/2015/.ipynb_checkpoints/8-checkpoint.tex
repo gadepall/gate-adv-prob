@@ -1,0 +1,94 @@
+Given X is a Binomial Random Variable with 5 trails and success probability $p=0.5$ and Y is a Continuous Random Variable over the interval $(0,1)$.
+So, $X \in \{0,1,2,3,4,5\}$ and $Y = U(0,1)$
+Since X and Y are Independent Random Variables,
+\begin{align}
+\pr{X + Y \leq 2} &= \pr{X = a, Y \leq 2-a} \\
+&= \sum_{a = 0}^{a = 2} \pr{X = a}\pr{Y \leq 2-a} 
+\end{align}
+\begin{multline}
+\pr{X + Y \leq 2} = \pr{X = 0}\pr{Y \leq 2} \label{ma2015-8:0.0.3} \\ 
++ \pr{X = 1}\pr{Y \leq 1} + \pr{X = 2}\pr{Y \leq 0}    
+\end{multline}
+Since $X$ is a Binomial Random Variable,
+\begin{align}
+\pr{X = k} = \begin{cases}
+\comb{n}{k}p^{n-k}(1-p)^{k} & 0 \leq k \leq 5 \\
+0 & otherwise
+\end{cases} \label{ma2015-8:0.0.4}
+\end{align}
+Substituting the values of n = 5 and p = $\frac{1}{2}$ in \eqref{ma2015-8:0.0.4}, we get
+\begin{align*}
+\pr{X = k} = \comb{5}{k} \left(\frac{1}{2} \right)^{5-k} \left(\frac{1}{2} \right)^{k} = \comb{5}{k} \left(\frac{1}{2} \right)^{5}    
+\end{align*}
+Also, the Cumulative Distribution Function of $Y$ is
+defined as
+\begin{align}
+CDF(Y) = F_Y(a) = \pr{Y \leq a} = \begin{cases}
+0 & a \leq 0 \\
+a & 0 < a < 1 \\ 
+1 & a \geq 1
+\end{cases} \label{ma2015-8:0.0.5}   
+\end{align}
+By substituting the probability values from \eqref{ma2015-8:0.0.4} and \eqref{ma2015-8:0.0.5} in \eqref{ma2015-8:0.0.3}, we get
+\begin{multline}
+\pr{X + Y \leq 2} = \comb{5}{0} \left(\frac{1}{2} \right)^{5}(1) + \comb{5}{1} \left(\frac{1}{2} \right)^{5}(1) \\ + \comb{5}{2} \left(\frac{1}{2} \right)^{5}(0)    
+\end{multline}
+\begin{align}
+&= (1)\left(\frac{1}{32} \right) + (5)\left(\frac{1}{32} \right) + 0 \\
+&= \left(\frac{1}{32} \right) + \left(\frac{5}{32} \right) \\
+&= \frac{6}{32} \\
+\pr{X + Y \leq 2} &= \frac{3}{16}    
+\end{align}
+Now,
+\begin{align}
+\pr{X + Y \geq 5} &= 1 - \pr{X + Y <  5}
+\end{align}
+\begin{multline}
+= 1 - [\pr{X + Y \leq 5} - \\ \pr{X + Y = 5}] \label{ma2015-8:0.0.12}    
+\end{multline}
+But, as Y is a Continuous Random Variable over $(0,1)$, so $\pr{Y = k } = 0$  $\forall$ k $\in [0,1]$ . Therefore considering all possible cases,
+\begin{multline}
+\pr{X + Y = 5} = \pr{X = 4}\pr{Y = 1} \\ + \pr{X = 5}\pr{Y = 0}    
+\end{multline}
+\begin{align}
+&= \pr{X = 4}(0) + \pr{X = 5}(0) \\
+&= 0 + 0 
+\end{align}
+\begin{align}
+\pr{X + Y = 5} &= 0 \label{ma2015-8:0.0.16}    
+\end{align}
+Hence, by substituting \eqref{ma2015-8:0.0.16} in \eqref{ma2015-8:0.0.12}, we get
+\begin{align}
+\pr{X + Y \geq 5} &= 1 - [\pr{X + Y \leq 5} -  0] \\
+\pr{X + Y \geq 5} &= 1 - \pr{X + Y \leq 5} \\
+\pr{X + Y \geq 5} &= 1 - \pr{X = a, Y \leq 5 - a}
+\end{align}
+\begin{align}
+&= 1 - \left[\sum_{a = 0}^{a = 5} \pr{X = a}\pr{Y \leq 5-a} \right]     
+\end{align}
+\begin{multline}
+= 1 - [ \pr{X = 0}\pr{Y \leq 5} + \pr{X = 1}\pr{Y \leq 4} \\
++ \pr{X = 2}\pr{Y \leq 3} + \pr{X = 3}\pr{Y \leq 2} \\
++ \pr{X = 4}\pr{Y \leq 1} + \pr{X = 5}\pr{Y \leq 0} ] \label{ma2015-8:0.0.21}    
+\end{multline}
+By substituting the probability values from \eqref{ma2015-8:0.0.4} and \eqref{ma2015-8:0.0.5} in \eqref{ma2015-8:0.0.21}, we get
+\begin{multline}
+\pr{X + Y \geq 5} = 1 - [\comb{5}{0}\left(\frac{1}{2}\right)^{5}(1) + \comb{5}{1}\left(\frac{1}{2}\right)^{5}(1) + \\ \comb{5}{2}\left(\frac{1}{2}\right)^{5}(1) + 
+\comb{5}{3}\left(\frac{1}{2}\right)^{5}(1) + \\
+\comb{5}{4}\left(\frac{1}{2}\right)^{5}(1) + 
+\comb{5}{5}\left(\frac{1}{2}\right)^{5}(0)]  
+\end{multline}
+\begin{multline}
+\pr{X + Y \geq 5} = 1 - \left(\frac{1}{2}\right)^{5} [\comb{5}{0} + \comb{5}{1} \\ + \comb{5}{2} + \comb{5}{3} + \comb{5}{4}]    
+\end{multline}
+\begin{align}
+&= 1 - \left(\frac{1}{32}\right)\left[1 + 5 + 10 + 10 + 5 \right] \\
+&= 1- \left(\frac{1}{32}\right)\left[31 \right] = \frac{1}{32}
+\end{align}
+Hence,
+$\pr{X + Y \leq 2} = \frac{3}{16}$ and $\pr{X + Y \geq 5} = \frac{1}{32}$.
+\begin{align*}
+\therefore \frac{\pr{X + Y \leq 2}}{\pr{X + Y \geq 5}} = \frac{\frac{3}{16}}{\frac{1}{32}} = 6. \\
+\therefore \frac{\pr{X + Y \leq 2}}{\pr{X + Y \geq 5}} = 6    
+\end{align*}
+Hence, the required ratio is 6 .
